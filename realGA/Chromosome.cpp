@@ -47,14 +47,7 @@ Chromosome Chromosome::operator=(const Chromosome& r)
     if (this == &r)
         return *this;
 
-//    for(int i = 0; i < nvars; i++){
-//        var[i] = r.var[i];
-//    }
-
     var = std::move(r.var);
-    sharpe = r.sharpe;
-    z25 = r.z25;
-    an_gain = r.an_gain;
     fitness = r.fitness;
     origin = std::move(r.origin);
     return *this;

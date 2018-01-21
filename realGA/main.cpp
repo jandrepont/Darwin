@@ -20,7 +20,8 @@ int main(int argc, char *argv[]){
     /*
      * set up dyn GA
      */
-    int cross, mute, chroms, elites, traders;
+    int cross, mute, chroms, elites, vars;
+    float min, max;
     printf("chroms = ");
     scanf("%d", &chroms);
     printf("cross = ");
@@ -29,10 +30,14 @@ int main(int argc, char *argv[]){
     scanf("%d", &mute);
     printf("elites = ");
     scanf("%d", &elites);
-    printf("traders = ");
-    scanf("%d", &traders);
+    printf("min = ");
+    scanf("%f", &min);
+    printf("max = ");
+    scanf("%f", &max);
+    printf("vars = ");
+    scanf("%d", &vars);
     GA *gen;
-    gen = new GA(cross, mute, chroms, elites, traders);
+    gen = new GA(cross, mute, chroms, elites, vars, min, max);
     int popNum = 0;
     gen->calcfitness();
     gen->sort(0, gen->get_nchroms());
@@ -45,14 +50,16 @@ int main(int argc, char *argv[]){
         gen->mutate();
         gen->calcfitness();
         gen->sort(0, gen->get_nchroms());
-        for(int j = 0; j < 5; j++){
-            for(int k = 0; k < 16; k++){
-                printf("epoch[%d] chrom[%d].var[%d] = %f\n",epoch, j, k, gen->pop[popNum][j].getvar(k));
+        printf("epoch[%d] chrom[%d] fit = %f\n",epoch, gen->pop[popNum][0].getFitness());
 
-            }
-
-        }
+//        for(int j = 0; j < 5; j++){
+//            for(int k = 0; k < vars; k++){
+//                printf("epoch[%d] chrom[%d].var[%d] = %f\n",epoch, j, k, gen->pop[popNum][j].getvar(k));
+//
+//            }
+//        }
     }
 
+    delete gen;
     return 0;
 }

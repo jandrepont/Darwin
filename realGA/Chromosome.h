@@ -2,7 +2,8 @@
 // Created by joela on 12/20/17.
 //
 
-
+#ifndef REALGA_CHROMOSOME_H
+#define REALGA_CHROMOSOME_H
 
 #include <vector>
 #include <stdio.h>
@@ -98,4 +99,4 @@ inline void Chromosome::setFitness(double rfitness)
     fitness = rfitness;
 }
 
-#endif //GREGOR_CHROMOSOME_H
+#endif //REALGA_CHROMOSOME_H

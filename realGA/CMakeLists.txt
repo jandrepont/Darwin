@@ -1,12 +1,10 @@
 cmake_minimum_required(VERSION 2.8.4)
-project(bin_realGA)
+project(realGA)
 
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake) # add custom package modules
 
 
 find_package (Threads)
-
-MESSAGE(STATUS "JSON Headers: ${JSON_INCLUDE_DIR}")
 
 # Include generated headers.
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
@@ -25,11 +23,11 @@ set(SOURCE_FILES
         Chromosome.h
         GA.cpp
         GA.h
-#        main.cpp
+        main.cpp
                         )
 
-add_executable(bin_realGA ${SOURCE_FILES})
+add_executable(realGA ${SOURCE_FILES})
 
 set(CURL_LIBRARY "-lcurl")
 
-target_link_libraries(bin_realGA -pthread ${CMAKE_THREAD_LIBS_INIT} )
+target_link_libraries(realGA -pthread ${CMAKE_THREAD_LIBS_INIT} )
