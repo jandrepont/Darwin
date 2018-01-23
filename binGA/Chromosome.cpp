@@ -7,33 +7,40 @@ Chromosome::Chromosome()
 {
     fitness = 0;
     nvars = 10;
-    std::uniform_integer_distribution<double> i(-1024, 1023);
+
+    std::uniform_int_distribution<int> integer_distribution(0, 1);
     std::mt19937 rng;
     rng.seed(std::random_device{}());
-
-    for (int i = 0; i < nvars; i++){
-        var.push_back(r_dist(rng));
+//    std::vector<int> unbounded_val;
+    double temp_val;
+    temp_val = 0;
+    for(int i = 0; i < 160; i++){
+        gene.push_back(integer_distribution(rng));
+        if(gene[i] == 1){
+            temp_val += pow(2, i);
+        }
+        if(i % nvars == 0 && i != 0){
+            temp_val = ((temp_val - 32768) / 32);
+            var.push_back(temp_val);
+            temp_val = 0;
+        }
     }
 
-
     origin.push_back("initial generation: 0");
-    var.push_back(r_dist(rng));
-
 }
-
 Chromosome::Chromosome(int &r_nvars, float &min, float &max ) {
 
-    std::uniform_real_distribution<double> r_dist(min, max);
-    std::mt19937 rng;
-    rng.seed(std::random_device{}());
-
-    nvars = r_nvars;
-    fitness = 0;
-    origin.push_back("initial generation: 0");
-
-    for (int i = 0; i < nvars; i++) {
-        var.push_back(r_dist(rng));
-    }
+//    std::uniform_real_distribution<double> r_dist(min, max);
+//    std::mt19937 rng;
+//    rng.seed(std::random_device{}());
+//
+//    nvars = r_nvars;
+//    fitness = 0;
+//    origin.push_back("initial generation: 0");
+//
+//    for (int i = 0; i < nvars; i++) {
+//        var.push_back(r_dist(rng));
+//    }
 }
 
 Chromosome::~Chromosome()
@@ -50,7 +57,7 @@ Chromosome Chromosome::operator=(const Chromosome& r)
 {
     if (this == &r)
         return *this;
-
+    gene = std::move(r.gene);
     var = std::move(r.var);
     fitness = r.fitness;
     origin = std::move(r.origin);

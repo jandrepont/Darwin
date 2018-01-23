@@ -43,7 +43,9 @@ public:
     void clear_origin();
 
 private:
+
     double fitness;
+    std::vector<int> gene;
     std::vector<double> var;
     std::vector<std::string> origin;
     int nvars;

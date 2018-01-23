@@ -86,18 +86,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/joela/workspace/Darwin/Chromosome.cpp">
-			<Option target="bin_realGA"/>
-		</Unit>
-		<Unit filename="/home/joela/workspace/Darwin/Chromosome.h">
-			<Option target="bin_realGA"/>
-		</Unit>
-		<Unit filename="/home/joela/workspace/Darwin/GA.cpp">
-			<Option target="bin_realGA"/>
-		</Unit>
-		<Unit filename="/home/joela/workspace/Darwin/GA.h">
-			<Option target="bin_realGA"/>
-		</Unit>
 		<Unit filename="/home/joela/workspace/Darwin/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
