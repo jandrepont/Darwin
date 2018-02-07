@@ -20,7 +20,7 @@ public:
 
 //    ~GA();
     int rouletteWheel();
-    void calcfitness();
+    void calcfitness(double* f);
 
     void preserveElites();
     void crossover();
@@ -34,6 +34,8 @@ public:
     void settopFit(double rtopFit);
     int getpopNum();
     void setpopNum(int rpopNum);
+
+    void returnInput(double* x);
 
 
     //getters and setters for member vars;

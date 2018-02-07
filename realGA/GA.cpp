@@ -4,7 +4,8 @@
 #include "GA.h"
 #include "Chromosome.h"
 #include <sstream>
-
+#include <malloc.h>
+//#include "../cec14-c-code/cec14_test_func.cpp"
 
 GA::GA()
 {
@@ -33,7 +34,7 @@ GA::GA(int r_ncross, int r_nmute, int r_nchroms, int r_nelites, int r_nvars, flo
     nmute = r_nmute;
     nchroms = r_nchroms;
     nelites = r_nelites;
-    nvars = 10;
+    nvars = r_nvars;
     generation = 0;
     min = r_min;
     max = r_max;
@@ -84,16 +85,25 @@ int GA::rouletteWheel()
     return wheel;
 }
 
-void GA::calcfitness()
+void GA::returnInput(double *x)
 {
-    std::vector<double> vars;
-    double fitness;
+    double temp;
+    int count;
+    count = 0;
     for(int i = 0; i < nchroms; i++){
-        vars = pop[popNum][i].getAllvar();
-        fitness = (vars[0]+vars[1]+vars[2]+vars[3]+vars[4]+vars[5]+vars[6]+vars[7])/10000000;
-        pop[popNum][i].setFitness(fitness);
+        for(int j = 0; j < nvars; j++){
+            temp = pop[popNum][i].getvar(j);
+            x[count] = temp;
+            count++;
+        }
     }
+}
 
+void GA::calcfitness(double* f)
+{
+    for(int i = 0; i < nchroms; i++){
+        pop[popNum][i].setFitness(f[i]);
+    }
 }
 
 void GA::preserveElites()

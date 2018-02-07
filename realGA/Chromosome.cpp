@@ -7,7 +7,7 @@ Chromosome::Chromosome()
 {
     fitness = 0;
     nvars = 10;
-    std::uniform_integer_distribution<double> i(-1024, 1023);
+    std::uniform_real_distribution<double> r_dist(-1024, 1023);
     std::mt19937 rng;
     rng.seed(std::random_device{}());
 
@@ -17,7 +17,6 @@ Chromosome::Chromosome()
 
 
     origin.push_back("initial generation: 0");
-    var.push_back(r_dist(rng));
 
 }
 

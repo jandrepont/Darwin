@@ -23,6 +23,7 @@ set(SOURCE_FILES
         Chromosome.h
         GA.cpp
         GA.h
+        cec14_test_func.cpp
         main.cpp
                         )
 
