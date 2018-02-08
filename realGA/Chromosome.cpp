@@ -7,7 +7,7 @@ Chromosome::Chromosome()
 {
     fitness = 0;
     nvars = 10;
-    std::uniform_real_distribution<double> r_dist(-1024, 1023);
+    std::uniform_real_distribution<double> r_dist(-100, 100);
     std::mt19937 rng;
     rng.seed(std::random_device{}());
 

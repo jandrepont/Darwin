@@ -10,14 +10,14 @@
 GA::GA()
 {
     popNum = 0;
-    ncross = 40;
-    nmute = 3;
-    nchroms = 50;
-    nelites = 5;
+    ncross = 160;
+    nmute = 10;
+    nchroms = 200;
+    nelites = 10;
     generation = 0;
     nvars = 10;
-    min = -1024;
-    max = 1023;
+    min = -100;
+    max = 100;
 
 
     for(int i = 0; i < 2; i++){
@@ -189,7 +189,7 @@ int GA::partition(int p, int q)
 
     for(j = p+1; j<q; j++)
     {
-        if(pop[popNum][j].getFitness() >= x)
+        if(pop[popNum][j].getFitness() <= x)
         {
             i = i + 1;
             std::swap(pop[popNum][i], pop[popNum][j]);

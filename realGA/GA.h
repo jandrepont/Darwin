@@ -37,6 +37,9 @@ public:
 
     void returnInput(double* x);
 
+    //for pthreads
+    int thread_id;
+
 
     //getters and setters for member vars;
 
