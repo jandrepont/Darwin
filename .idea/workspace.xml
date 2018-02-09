@@ -10,378 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc721cd9-8052-440c-b1ac-d836c6efa02f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/cec14-c-code/CMakeLists.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cec14-c-code/build.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_10_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_10_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_10_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_10_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_10_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_10_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_11_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_11_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_11_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_11_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_11_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_11_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_12_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_12_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_12_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_12_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_12_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_12_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_13_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_13_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_13_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_13_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_13_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_13_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_14_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_14_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_14_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_14_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_14_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_14_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_15_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_15_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_15_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_15_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_15_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_15_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_16_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_16_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_16_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_16_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_16_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_16_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_17_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_17_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_17_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_17_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_17_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_17_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_18_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_18_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_18_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_18_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_18_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_18_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_19_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_19_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_19_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_19_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_19_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_19_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_1_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_1_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_1_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_1_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_1_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_1_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_20_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_20_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_20_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_20_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_20_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_20_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_21_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_21_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_21_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_21_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_21_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_21_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_22_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_22_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_22_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_22_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_22_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_22_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_23_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_23_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_23_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_23_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_23_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_23_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_24_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_24_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_24_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_24_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_24_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_24_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_25_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_25_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_25_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_25_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_25_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_25_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_26_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_26_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_26_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_26_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_26_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_26_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_27_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_27_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_27_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_27_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_27_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_27_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_28_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_28_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_28_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_28_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_28_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_28_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_29_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_29_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_29_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_29_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_29_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_29_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_2_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_2_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_2_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_2_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_2_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_2_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_30_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_30_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_30_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_30_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_30_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_30_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_3_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_3_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_3_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_3_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_3_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_3_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_4_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_4_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_4_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_4_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_4_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_4_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_5_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_5_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_5_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_5_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_5_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_5_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_6_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_6_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_6_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_6_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_6_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_6_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_7_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_7_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_7_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_7_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_7_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_7_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_8_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_8_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_8_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_8_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_8_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_8_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_9_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_9_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_9_D2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_9_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_9_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/M_9_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_1.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_11.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_12.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_13.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_14.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_15.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_16.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_17.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_18.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_19.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_21.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_22.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_23.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_24.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_25.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_26.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_27.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_28.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_29.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_3.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_4.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_5.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_6.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_7.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_8.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shift_data_9.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_10_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_10_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_10_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_10_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_10_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_11_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_11_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_11_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_11_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_11_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_12_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_12_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_12_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_12_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_12_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_13_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_13_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_13_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_13_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_13_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_14_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_14_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_14_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_14_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_14_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_15_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_15_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_15_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_15_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_15_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_16_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_16_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_16_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_16_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_16_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_17_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_17_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_17_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_17_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_17_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_18_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_18_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_18_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_18_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_18_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_19_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_19_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_19_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_19_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_19_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_1_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_1_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_1_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_1_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_1_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_20_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_20_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_20_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_20_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_20_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_21_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_21_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_21_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_21_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_21_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_22_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_22_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_22_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_22_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_22_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_23_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_23_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_23_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_23_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_23_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_24_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_24_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_24_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_24_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_24_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_25_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_25_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_25_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_25_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_25_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_26_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_26_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_26_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_26_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_26_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_27_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_27_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_27_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_27_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_27_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_28_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_28_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_28_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_28_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_28_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_29_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_29_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_29_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_29_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_29_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_2_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_2_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_2_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_2_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_2_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_30_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_30_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_30_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_30_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_30_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_3_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_3_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_3_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_3_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_3_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_4_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_4_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_4_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_4_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_4_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_5_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_5_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_5_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_5_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_5_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_6_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_6_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_6_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_6_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_6_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_7_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_7_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_7_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_7_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_7_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_8_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_8_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_8_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_8_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_8_D50.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_9_D10.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_9_D100.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_9_D20.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_9_D30.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/realGA/input_data/shuffle_data_9_D50.txt" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/cec14-c-code/cec14_test_func.cpp" afterPath="$PROJECT_DIR$/cec14-c-code/cec14_test_func.cpp" />
-      <change beforePath="$PROJECT_DIR$/cec14-c-code/main.cpp" afterPath="$PROJECT_DIR$/cec14-c-code/main.cpp" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
-      <change beforePath="$PROJECT_DIR$/realGA/CMakeLists.txt" afterPath="$PROJECT_DIR$/realGA/CMakeLists.txt" />
-      <change beforePath="$PROJECT_DIR$/realGA/Chromosome.cpp" afterPath="$PROJECT_DIR$/realGA/Chromosome.cpp" />
+      <change beforePath="$PROJECT_DIR$/binGA/Chromosome.cpp" afterPath="$PROJECT_DIR$/binGA/Chromosome.cpp" />
       <change beforePath="$PROJECT_DIR$/realGA/GA.cpp" afterPath="$PROJECT_DIR$/realGA/GA.cpp" />
       <change beforePath="$PROJECT_DIR$/realGA/GA.h" afterPath="$PROJECT_DIR$/realGA/GA.h" />
       <change beforePath="$PROJECT_DIR$/realGA/dist/realGA" afterPath="$PROJECT_DIR$/realGA/dist/realGA" />
@@ -400,71 +30,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cec14-c-code/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1420">
-              <caret line="78" column="18" lean-forward="true" selection-start-line="72" selection-start-column="4" selection-end-line="78" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cec14_test_func.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/realGA/cec14_test_func.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34548">
-              <caret line="143" column="40" lean-forward="false" selection-start-line="143" selection-start-column="34" selection-end-line="143" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/realGA/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2202">
-              <caret line="76" column="22" lean-forward="true" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GA.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/realGA/GA.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="96" column="20" lean-forward="false" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Chromosome.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/realGA/Chromosome.cpp">
+        <entry file="file://$PROJECT_DIR$/binGA/Chromosome.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="31" />
+            <state relative-caret-position="34">
+              <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chromosome.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/realGA/Chromosome.h">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/codes/C version/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="78" column="19" lean-forward="false" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GA.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/realGA/GA.h">
+      <file leaf-file-name="cec17_test_func.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/codes/C version/cec17_test_func.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+            <state relative-caret-position="-3978">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -484,6 +74,9 @@
       <find>sr_func</find>
       <find>func_num==</find>
       <find>OShift</find>
+      <find>get</find>
+      <find>set</find>
+      <find>sort</find>
     </findStrings>
     <replaceStrings>
       <replace>lf</replace>
@@ -504,7 +97,6 @@
         <option value="$PROJECT_DIR$/realGA/Chromosome.h" />
         <option value="$PROJECT_DIR$/binGA/Chromosome.h" />
         <option value="$PROJECT_DIR$/binGA/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/binGA/Chromosome.cpp" />
         <option value="$PROJECT_DIR$/cec14-c-code/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/cec14-c-code/build.sh" />
         <option value="$PROJECT_DIR$/realGA/Chromosome.cpp" />
@@ -514,6 +106,7 @@
         <option value="$PROJECT_DIR$/realGA/GA.h" />
         <option value="$PROJECT_DIR$/realGA/GA.cpp" />
         <option value="$PROJECT_DIR$/realGA/main.cpp" />
+        <option value="$PROJECT_DIR$/binGA/Chromosome.cpp" />
       </list>
     </option>
   </component>
@@ -524,10 +117,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="130" />
-    <option name="y" value="-8" />
-    <option name="width" value="3710" />
-    <option name="height" value="2168" />
+    <option name="width" value="2560" />
+    <option name="height" value="1408" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -561,6 +152,17 @@
               <item name="Darwin" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="Darwin" type="462c0819:PsiDirectoryNode" />
               <item name="cec14-c-code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Darwin" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="Darwin" type="462c0819:PsiDirectoryNode" />
+              <item name="codes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Darwin" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="Darwin" type="462c0819:PsiDirectoryNode" />
+              <item name="codes" type="462c0819:PsiDirectoryNode" />
+              <item name="C version" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Darwin" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
@@ -628,17 +230,19 @@
       <workItem from="1517930945126" duration="6076000" />
       <workItem from="1517966206065" duration="1870000" />
       <workItem from="1517975105111" duration="4020000" />
+      <workItem from="1518102205432" duration="577000" />
+      <workItem from="1518189690796" duration="2210000" />
+      <workItem from="1518196780345" duration="96000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24395000" />
+    <option name="totallyTimeSpent" value="30326000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="130" y="-8" width="3848" height="2120" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="3848" height="2120" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23203126" sideWeight="0.49789914" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15416667" sideWeight="0.49789914" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -657,6 +261,26 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23203126" sideWeight="0.49789914" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23203126" sideWeight="0.5021008" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -669,20 +293,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/realGA/Chromosome.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/realGA/Chromosome.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/realGA/Chromosome.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -874,13 +484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/binGA/Chromosome.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2142">
-          <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/binGA/GA.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -941,7 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,7 +551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="250" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,7 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,23 +565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1216">
           <caret line="113" column="8" lean-forward="true" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/realGA/GA.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/realGA/Chromosome.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,15 +572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1122">
           <caret line="78" column="19" lean-forward="false" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/realGA/GA.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="96" column="20" lean-forward="false" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1005,22 +579,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1420">
           <caret line="78" column="18" lean-forward="true" selection-start-line="72" selection-start-column="4" selection-end-line="78" selection-end-column="18" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realGA/Chromosome.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="9" column="61" lean-forward="false" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realGA/GA.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="38" column="24" lean-forward="false" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/realGA/cec14_test_func.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34548">
+        <state relative-caret-position="4760">
           <caret line="143" column="40" lean-forward="false" selection-start-line="143" selection-start-column="34" selection-end-line="143" selection-end-column="40" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realGA/GA.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/realGA/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2202">
-          <caret line="76" column="22" lean-forward="true" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+        <state relative-caret-position="2168">
+          <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/binGA/Chromosome.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codes/C version/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codes/C version/cec17_test_func.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3978">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

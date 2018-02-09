@@ -105,7 +105,12 @@ void GA::calcfitness(double* f)
         pop[popNum][i].setFitness(f[i]);
     }
 }
-
+void GA::dummyFitness()
+{
+    for(int i = 0; i < nchroms; i++){
+        pop[popNum][i].setFitness(1.0);
+    }
+}
 void GA::preserveElites()
 {
     int prevPop = (popNum + 1)%2;
@@ -189,7 +194,7 @@ int GA::partition(int p, int q)
 
     for(j = p+1; j<q; j++)
     {
-        if(pop[popNum][j].getFitness() >= x)
+        if(pop[popNum][j].getFitness() <= x)
         {
             i = i + 1;
             std::swap(pop[popNum][i], pop[popNum][j]);
@@ -204,19 +209,22 @@ void GA::mutate()
 {
     int ran_gene, ran_chrom;
     double var;
+    int prevPop = (popNum+1)%2;
+    int index;
     std::mt19937 rng;
     rng.seed(std::random_device{}());
     std::string add_origin;
     std::uniform_int_distribution<int> i_dist(0,nvars-1);
     std::uniform_real_distribution<double> r_dist(min, max);
     for(int i = 0; i < nmute; i++) {
+        index = nelites + ncross + i;
         var = r_dist(rng);
         i_dist = std::uniform_int_distribution<int> (0, nvars-1);
         ran_gene = i_dist(rng);
         i_dist = std::uniform_int_distribution<int> (nelites, nchroms-1);
         ran_chrom = i_dist(rng);
-        pop[popNum][ran_chrom].setvar(ran_gene, var);
-
+        pop[prevPop][ran_chrom].setvar(ran_gene, var);
+        pop[popNum][index] = pop[prevPop][ran_chrom];
         add_origin = "Gene [";
         add_origin += std::to_string(ran_gene);
         add_origin += "] mutated Generation: " + std::to_string(generation);
@@ -227,7 +235,7 @@ void GA::mutate()
 
 void GA::createNew()
 {
-    int newChrom = nchroms - (nelites + ncross);
+    int newChrom = nchroms - (nelites + ncross + nmute);
     std::vector<std::string> new_origin;
     new_origin.push_back("New Chrom created in Generation: " + std::to_string(generation));
 //    printf("New Chroms = %d\n",newChrom);

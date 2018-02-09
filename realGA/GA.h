@@ -36,6 +36,7 @@ public:
     void setpopNum(int rpopNum);
 
     void returnInput(double* x);
+    void dummyFitness();
 
 
     //getters and setters for member vars;
@@ -70,10 +71,7 @@ private:
 
 };
 
-inline int GA::getGen()
-{
-    return generation;
-}
+
 inline void GA::setGen(int rgeneration)
 {
     generation = rgeneration;
@@ -83,54 +81,11 @@ inline void GA::setpopNum(int rpopNum)
 {
     popNum = rpopNum;
 }
-inline int GA::getpopNum()
-{
-    return popNum;
-}
 
-inline int GA::get_ncross()
-{
-    return ncross;
-}
-inline void GA::set_ncross(int rncross)
-{
-    ncross = rncross;
-}
-
-inline int GA::get_nmute()
-{
-    return nmute;
-}
-inline void GA::set_nmute(int rnmute)
-{
-    nmute = rnmute;
-}
 
 inline int GA::get_nchroms()
 {
     return nchroms;
-}
-inline void GA::set_nchroms(int rnchroms)
-{
-    nchroms = rnchroms;
-}
-
-inline int GA::get_nelites()
-{
-    return nelites;
-}
-inline void GA::set_nelites(int rnelites)
-{
-    ncross = rnelites;
-}
-
-inline int GA::get_nvars()
-{
-    return nvars;
-}
-inline void GA::set_nvars(int rnvars)
-{
-    ncross = rnvars;
 }
 
 
