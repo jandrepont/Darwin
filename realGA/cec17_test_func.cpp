@@ -1,6 +1,6 @@
 /*
-  CEC14 Test Function Suite for Single Objective Optimization
-  Jane Jing Liang (email: liangjing@zzu.edu.cn; liangjing@pmail.ntu.edu.cn) 
+  CEC17 Test Function Suite for Single Objective Optimization
+  Noor Awad (email: noor0029@ntu.edu.sg) 
   Dec. 20th 2013
 */
 
@@ -30,10 +30,16 @@ void schwefel_func (double *, double *, int , double *,double *, int, int); /* S
 void katsuura_func (double *, double *, int , double *,double *, int, int); /* Katsuura */
 void bi_rastrigin_func (double *, double *, int , double *,double *, int, int); /* Lunacek Bi_rastrigin */
 void grie_rosen_func (double *, double *, int , double *,double *, int, int); /* Griewank-Rosenbrock  */
-void escaffer6_func (double *, double *, int , double *,double *, int, int); /* Expanded Scaffer??s F6  */
+void escaffer6_func (double *, double *, int , double *,double *, int, int); /* Expanded Scaffer¡¯s F6  */
 void step_rastrigin_func (double *, double *, int , double *,double *, int, int); /* Noncontinuous Rastrigin's  */
 void happycat_func (double *, double *, int , double *,double *, int, int); /* HappyCat */
 void hgbat_func (double *, double *, int , double *,double *, int, int); /* HGBat  */
+
+/* New functions Noor Changes */
+void sum_diff_pow_func(double *, double *, int , double *,double *, int, int); /* Sum of different power */
+void zakharov_func(double *, double *, int , double *,double *, int, int); /* ZAKHAROV */
+void levy_func(double *, double *, int , double *,double *, int, int); /* Levy */
+void dixon_price_func(double *, double *, int , double *,double *, int, int); /* Dixon and Price */
 
 void hf01 (double *, double *, int, double *,double *, int *,int, int); /* Hybrid Function 1 */
 void hf02 (double *, double *, int, double *,double *, int *,int, int); /* Hybrid Function 2 */
@@ -41,6 +47,10 @@ void hf03 (double *, double *, int, double *,double *, int *,int, int); /* Hybri
 void hf04 (double *, double *, int, double *,double *, int *,int, int); /* Hybrid Function 4 */
 void hf05 (double *, double *, int, double *,double *, int *,int, int); /* Hybrid Function 5 */
 void hf06 (double *, double *, int, double *,double *, int *,int, int); /* Hybrid Function 6 */
+void hf07 (double *, double *, int, double *,double *, int *,int, int); /* Hybrid Function 7 */
+void hf08 (double *, double *, int, double *,double *, int *,int, int); /* Hybrid Function 8 */
+void hf09 (double *, double *, int, double *,double *, int *,int, int); /* Hybrid Function 9 */
+void hf10 (double *, double *, int, double *,double *, int *,int, int); /* Hybrid Function 10 */
 
 void cf01 (double *, double *, int , double *,double *, int); /* Composition Function 1 */
 void cf02 (double *, double *, int , double *,double *, int); /* Composition Function 2 */
@@ -48,8 +58,10 @@ void cf03 (double *, double *, int , double *,double *, int); /* Composition Fun
 void cf04 (double *, double *, int , double *,double *, int); /* Composition Function 4 */
 void cf05 (double *, double *, int , double *,double *, int); /* Composition Function 5 */
 void cf06 (double *, double *, int , double *,double *, int); /* Composition Function 6 */
-void cf07 (double *, double *, int , double *,double *, int *, int); /* Composition Function 7 */
-void cf08 (double *, double *, int , double *,double *, int *, int); /* Composition Function 8 */
+void cf07 (double *, double *, int , double *,double *, int); /* Composition Function 7 */
+void cf08 (double *, double *, int , double *,double *, int); /* Composition Function 8 */
+void cf09 (double *, double *, int , double *,double *, int *, int); /* Composition Function 9 */
+void cf10 (double *, double *, int , double *,double *, int *, int); /* Composition Function 10 */
 
 void shiftfunc (double*,double*,int,double*);
 void rotatefunc (double*,double*,int, double*);
@@ -62,7 +74,7 @@ extern double *OShift,*M,*y,*z,*x_bound;
 extern int ini_flag,n_flag,func_flag,*SS;
 
 
-void cec14_test_func(double *x, double *f, int nx, int mx,int func_num)
+void cec17_test_func(double *x, double *f, int nx, int mx,int func_num)
 {
 	int cf_num=10,i,j;
 	if (ini_flag==1)
@@ -104,7 +116,7 @@ void cec14_test_func(double *x, double *f, int nx, int mx,int func_num)
 		{
 		    printf("\n Error: Cannot open input file for reading \n");
 		}
-		if (func_num<23)
+		if (func_num<20)
 		{
 			M=(double*)malloc(nx*nx*sizeof(double));
 			if (M==NULL)
@@ -134,7 +146,7 @@ void cec14_test_func(double *x, double *f, int nx, int mx,int func_num)
 			printf("\n Error: Cannot open input file for reading \n");
 		}
 
-		if (func_num<23)
+		if (func_num<20)
 		{
 			OShift=(double *)malloc(nx*sizeof(double));
 			if (OShift==NULL)
@@ -168,7 +180,7 @@ void cec14_test_func(double *x, double *f, int nx, int mx,int func_num)
 
 		/* Load Shuffle_data */
 		
-		if (func_num>=17&&func_num<=22)
+		if (func_num>=11&&func_num<=20)
 		{
 			sprintf(FileName, "input_data/shuffle_data_%d_D%d.txt", func_num, nx);
 			fpt = fopen(FileName,"r");
@@ -216,15 +228,16 @@ void cec14_test_func(double *x, double *f, int nx, int mx,int func_num)
 		switch(func_num)
 		{
 		case 1:	
-			ellips_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
+			bent_cigar_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
 			f[i]+=100.0;
 			break;
 		case 2:	
-			bent_cigar_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
-			f[i]+=200.0;
+			//sum_diff_pow_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
+			//f[i]+=200.0;
+			printf("\nError: This function (F2) has been deleted\n");
 			break;
 		case 3:	
-			discus_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
+			zakharov_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
 			f[i]+=300.0;
 			break;
 		case 4:	
@@ -232,107 +245,107 @@ void cec14_test_func(double *x, double *f, int nx, int mx,int func_num)
 			f[i]+=400.0;
 			break;
 		case 5:
-			ackley_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
+			rastrigin_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
 			f[i]+=500.0;
 			break;
 		case 6:
-			weierstrass_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
+			schaffer_F7_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
 			f[i]+=600.0;
 			break;
 		case 7:	
-			griewank_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
+			bi_rastrigin_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
 			f[i]+=700.0;
 			break;
 		case 8:	
-			rastrigin_func(&x[i*nx],&f[i],nx,OShift,M,1,0);
+			step_rastrigin_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
 			f[i]+=800.0;
 			break;
 		case 9:	
-			rastrigin_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
+			levy_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
 			f[i]+=900.0;
 			break;
 		case 10:	
-			schwefel_func(&x[i*nx],&f[i],nx,OShift,M,1,0);
+			schwefel_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
 			f[i]+=1000.0;
 			break;
 		case 11:	
-			schwefel_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
+			hf01(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
 			f[i]+=1100.0;
 			break;
 		case 12:	
-			katsuura_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
+			hf02(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
 			f[i]+=1200.0;
 			break;
 		case 13:	
-			happycat_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
+			hf03(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
 			f[i]+=1300.0;
 			break;
 		case 14:	
-			hgbat_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
+			hf04(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
 			f[i]+=1400.0;
 			break;
 		case 15:	
-			grie_rosen_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
+			hf05(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
 			f[i]+=1500.0;
 			break;
 		case 16:	
-			escaffer6_func(&x[i*nx],&f[i],nx,OShift,M,1,1);
+			hf06(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
 			f[i]+=1600.0;
 			break;
 		case 17:	
-			hf01(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
+			hf07(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
 			f[i]+=1700.0;
 			break;
 		case 18:	
-			hf02(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
+			hf08(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
 			f[i]+=1800.0;
 			break;
 		case 19:	
-			hf03(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
+			hf09(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
 			f[i]+=1900.0;
 			break;
 		case 20:	
-			hf04(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
+			hf10(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
 			f[i]+=2000.0;
 			break;
 		case 21:	
-			hf05(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
+			cf01(&x[i*nx],&f[i],nx,OShift,M,1);
 			f[i]+=2100.0;
 			break;
 		case 22:	
-			hf06(&x[i*nx],&f[i],nx,OShift,M,SS,1,1);
+			cf02(&x[i*nx],&f[i],nx,OShift,M,1);
 			f[i]+=2200.0;
 			break;
 		case 23:	
-			cf01(&x[i*nx],&f[i],nx,OShift,M,1);
+			cf03(&x[i*nx],&f[i],nx,OShift,M,1);
 			f[i]+=2300.0;
 			break;
 		case 24:	
-			cf02(&x[i*nx],&f[i],nx,OShift,M,1);
+			cf04(&x[i*nx],&f[i],nx,OShift,M,1);
 			f[i]+=2400.0;
 			break;
 		case 25:	
-			cf03(&x[i*nx],&f[i],nx,OShift,M,1);
+			cf05(&x[i*nx],&f[i],nx,OShift,M,1);
 			f[i]+=2500.0;
 			break;
 		case 26:
-			cf04(&x[i*nx],&f[i],nx,OShift,M,1);
+			cf06(&x[i*nx],&f[i],nx,OShift,M,1);
 			f[i]+=2600.0;
 			break;
 		case 27:
-			cf05(&x[i*nx],&f[i],nx,OShift,M,1);
+			cf07(&x[i*nx],&f[i],nx,OShift,M,1);
 			f[i]+=2700.0;
 			break;
 		case 28:
-			cf06(&x[i*nx],&f[i],nx,OShift,M,1);
+			cf08(&x[i*nx],&f[i],nx,OShift,M,1);
 			f[i]+=2800.0;
 			break;
 		case 29:
-			cf07(&x[i*nx],&f[i],nx,OShift,M,SS,1);
+			cf09(&x[i*nx],&f[i],nx,OShift,M,SS,1);
 			f[i]+=2900.0;
 			break;
 		case 30:
-			cf08(&x[i*nx],&f[i],nx,OShift,M,SS,1);
+			cf10(&x[i*nx],&f[i],nx,OShift,M,SS,1);
 			f[i]+=3000.0;
 			break;
 		default:
@@ -368,6 +381,93 @@ void ellips_func (double *x, double *f, int nx, double *Os,double *Mr, int s_fla
 	{
        f[0] += pow(10.0,6.0*i/(nx-1))*z[i]*z[i];
 	}
+}
+
+void sum_diff_pow_func (double *x, double *f, int nx, double *Os,double *Mr, int s_flag, int r_flag) /* sum of different power */
+{
+    int i;
+	sr_func (x, z, nx, Os, Mr,1.0, s_flag, r_flag); // shift and rotate 
+	f[0] = 0.0; 
+	double sum = 0.0;
+	for (i=0; i<nx; i++)
+	{
+		double xi = z[i];
+		double newv = pow((abs(xi)),(i+1));
+		sum = sum + newv;
+	}
+	
+	f[0] = sum;
+}
+
+void zakharov_func (double *x, double *f, int nx, double *Os,double *Mr, int s_flag, int r_flag) /* zakharov */
+{
+	int i;
+	sr_func (x, z, nx, Os, Mr,1.0, s_flag, r_flag); // shift and rotate 
+	f[0] = 0.0; 
+	double sum1 = 0.0;
+	double sum2 = 0.0;
+	for (i=0; i<nx; i++)
+	{
+		double xi = z[i];
+		sum1 = sum1 + pow(xi,2);
+		sum2 = sum2 + 0.5*(i+1)*xi;
+	}
+	
+	f[0] = sum1 + pow(sum2,2) + pow(sum2,4);
+}
+
+/* Levy function */
+void levy_func (double *x, double *f, int nx, double *Os,double *Mr, int s_flag, int r_flag) /* Levy */
+{
+    int i;
+	f[0] = 0.0;
+	sr_func (x, z, nx, Os, Mr,1.0, s_flag, r_flag); /* shift and rotate */
+	
+	double *w;
+	w=(double *)malloc(sizeof(double)  *  nx);
+
+	double sum1= 0.0;
+	for (i=0; i<nx; i++)
+	{
+	   w[i] = 1.0 + (z[i] - 1.0)/4.0;
+	}
+	
+	double term1 = pow((sin(PI*w[0])),2);
+	double term3 = pow((w[nx-1]-1),2) * (1+pow((sin(2*PI*w[nx-1])),2));
+	
+	double sum = 0.0;
+
+	for (i=0; i<nx-1; i++)
+	{
+		double wi = w[i];
+        double newv = pow((wi-1),2) * (1+10*pow((sin(PI*wi+1)),2));
+		sum = sum + newv;
+	}
+	
+	f[0] = term1 + sum + term3;
+	free(w);   // ADD THIS LINE to free memory! Thanks for Dr. Janez
+}
+
+/* Dixon and Price */
+void dixon_price_func (double *x, double *f, int nx, double *Os,double *Mr, int s_flag, int r_flag) /* Dixon and Price */
+{
+	int i;
+	int j;
+	sr_func (x, z, nx, Os, Mr,1.0, s_flag, r_flag); // shift and rotate 
+	f[0] = 0;
+	double x1 = z[0];;
+	double term1 = pow((x1-1),2);
+	
+	double sum = 0;
+	for (i=1; i<nx; i++)
+	{
+		double xi = z[i];
+		double xold = z[i-1];
+		double newv = i * pow((pow(2*xi,2) - xold),2);
+		sum = sum + newv;
+	}
+	
+	f[0] = term1 + sum;
 }
 
 void bent_cigar_func (double *x, double *f, int nx, double *Os,double *Mr, int s_flag, int r_flag) /* Bent_Cigar */
@@ -754,7 +854,7 @@ void hf01 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag
 	int i,tmp,cf_num=3;
 	double fit[3];
 	int G[3],G_nx[3];
-	double Gp[3]={0.3,0.3,0.4};
+	double Gp[3]={0.2,0.4,0.4};
 
 	tmp=0;
 	for (i=0; i<cf_num-1; i++)
@@ -776,11 +876,11 @@ void hf01 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag
 		y[i]=z[S[i]-1];
 	}
 	i=0;
-	schwefel_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	zakharov_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
 	i=1;
-	rastrigin_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	rosenbrock_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
 	i=2;
-	ellips_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	rastrigin_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
 	f[0]=0.0;
 	for(i=0;i<cf_num;i++)
 	{
@@ -816,54 +916,141 @@ void hf02 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag
 		y[i]=z[S[i]-1];
 	}
 	i=0;
+	ellips_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=1;
+	schwefel_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=2;
+	bent_cigar_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+
+	f[0]=0.0;
+	for(i=0;i<cf_num;i++)
+	{
+		f[0] += fit[i];
+	}
+}
+
+void hf03 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag,int r_flag) /* Hybrid Function 2 */
+{
+	int i,tmp,cf_num=3;
+	double fit[3];
+	int G[3],G_nx[3];
+	double Gp[3]={0.3,0.3,0.4};
+
+	tmp=0;
+	for (i=0; i<cf_num-1; i++)
+	{
+		G_nx[i] = ceil(Gp[i]*nx);
+		tmp += G_nx[i];
+	}
+	G_nx[cf_num-1]=nx-tmp;
+
+	G[0]=0;
+	for (i=1; i<cf_num; i++)
+	{
+		G[i] = G[i-1]+G_nx[i-1];
+	}
+
+	sr_func (x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
+
+	for (i=0; i<nx; i++)
+	{
+		y[i]=z[S[i]-1];
+	}
+	
+	i=0;
+	bent_cigar_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=1;
+	rosenbrock_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=2;
+	bi_rastrigin_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+
+	f[0]=0.0;
+	for(i=0;i<cf_num;i++)
+	{
+		f[0] += fit[i];
+	}
+	
+}
+
+void hf04 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag,int r_flag) /* Hybrid Function 3 */
+{
+	int i,tmp,cf_num=4;
+	double fit[4];
+	int G[4],G_nx[4];
+	double Gp[4]={0.2,0.2,0.2,0.4};
+
+	tmp=0;
+	for (i=0; i<cf_num-1; i++)
+	{
+		G_nx[i] = ceil(Gp[i]*nx);
+		tmp += G_nx[i];
+	}
+	G_nx[cf_num-1]=nx-tmp;
+
+	G[0]=0;
+	for (i=1; i<cf_num; i++)
+	{
+		G[i] = G[i-1]+G_nx[i-1];
+	}
+
+	sr_func (x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
+
+	for (i=0; i<nx; i++)
+	{
+		y[i]=z[S[i]-1];
+	}
+	i=0;
+	ellips_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=1;
+	ackley_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=2;
+	schaffer_F7_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=3;
+	rastrigin_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	
+	f[0]=0.0;
+	for(i=0;i<cf_num;i++)
+	{
+		f[0] += fit[i];
+	}
+}
+
+void hf05 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag,int r_flag) /* Hybrid Function 4 */
+{
+	int i,tmp,cf_num=4;
+	double fit[4];
+	int G[4],G_nx[4];
+	double Gp[4]={0.2,0.2,0.3,0.3};
+
+	tmp=0;
+	for (i=0; i<cf_num-1; i++)
+	{
+		G_nx[i] = ceil(Gp[i]*nx);
+		tmp += G_nx[i];
+	}
+	G_nx[cf_num-1]=nx-tmp;
+
+	G[0]=0;
+	for (i=1; i<cf_num; i++)
+	{
+		G[i] = G[i-1]+G_nx[i-1];
+	}
+
+	sr_func (x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
+
+	for (i=0; i<nx; i++)
+	{
+		y[i]=z[S[i]-1];
+	}
+	i=0;
+	
 	bent_cigar_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
 	i=1;
 	hgbat_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
 	i=2;
 	rastrigin_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
-
-	f[0]=0.0;
-	for(i=0;i<cf_num;i++)
-	{
-		f[0] += fit[i];
-	}
-}
-
-void hf03 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag,int r_flag) /* Hybrid Function 3 */
-{
-	int i,tmp,cf_num=4;
-	double fit[4];
-	int G[4],G_nx[4];
-	double Gp[4]={0.2,0.2,0.3,0.3};
-
-	tmp=0;
-	for (i=0; i<cf_num-1; i++)
-	{
-		G_nx[i] = ceil(Gp[i]*nx);
-		tmp += G_nx[i];
-	}
-	G_nx[cf_num-1]=nx-tmp;
-
-	G[0]=0;
-	for (i=1; i<cf_num; i++)
-	{
-		G[i] = G[i-1]+G_nx[i-1];
-	}
-
-	sr_func (x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
-
-	for (i=0; i<nx; i++)
-	{
-		y[i]=z[S[i]-1];
-	}
-	i=0;
-	griewank_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
-	i=1;
-	weierstrass_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
-	i=2;
+	i=3;
 	rosenbrock_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
-	i=3;
-	escaffer6_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
 	
 	f[0]=0.0;
 	for(i=0;i<cf_num;i++)
@@ -871,8 +1058,7 @@ void hf03 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag
 		f[0] += fit[i];
 	}
 }
-
-void hf04 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag,int r_flag) /* Hybrid Function 4 */
+void hf06 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag,int r_flag) /* Hybrid Function 5 */
 {
 	int i,tmp,cf_num=4;
 	double fit[4];
@@ -900,58 +1086,14 @@ void hf04 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag
 		y[i]=z[S[i]-1];
 	}
 	i=0;
-	hgbat_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
-	i=1;
-	discus_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
-	i=2;
-	grie_rosen_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
-	i=3;
-	rastrigin_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
-	
-	f[0]=0.0;
-	for(i=0;i<cf_num;i++)
-	{
-		f[0] += fit[i];
-	}
-}
-void hf05 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag,int r_flag) /* Hybrid Function 5 */
-{
-	int i,tmp,cf_num=5;
-	double fit[5];
-	int G[5],G_nx[5];
-	double Gp[5]={0.1,0.2,0.2,0.2,0.3};
-
-	tmp=0;
-	for (i=0; i<cf_num-1; i++)
-	{
-		G_nx[i] = ceil(Gp[i]*nx);
-		tmp += G_nx[i];
-	}
-	G_nx[cf_num-1]=nx-tmp;
-
-	G[0]=0;
-	for (i=1; i<cf_num; i++)
-	{
-		G[i] = G[i-1]+G_nx[i-1];
-	}
-
-	sr_func (x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
-
-	for (i=0; i<nx; i++)
-	{
-		y[i]=z[S[i]-1];
-	}
-	i=0;
-	escaffer6_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0); 
+	escaffer6_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
 	i=1;
 	hgbat_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
 	i=2;
 	rosenbrock_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
 	i=3;
 	schwefel_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
-	i=4;
-	ellips_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
-
+	
 	f[0]=0.0;
 	for(i=0;i<cf_num;i++)
 	{
@@ -959,7 +1101,7 @@ void hf05 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag
 	}
 }
 
-void hf06 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag,int r_flag) /* Hybrid Function 6 */
+void hf07 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag,int r_flag) /* Hybrid Function 6 */
 {
 	int i,tmp,cf_num=5;
 	double fit[5];
@@ -989,13 +1131,155 @@ void hf06 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag
 	i=0;
 	katsuura_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
 	i=1;
-	happycat_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	ackley_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
 	i=2;
 	grie_rosen_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
 	i=3;
 	schwefel_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
 	i=4;
+	rastrigin_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+
+	f[0]=0.0;
+	for(i=0;i<cf_num;i++)
+	{
+		f[0] += fit[i];
+	}
+}
+
+void hf08 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag,int r_flag) /* Hybrid Function 6 */
+{
+	int i,tmp,cf_num=5;
+	double fit[5];
+	int G[5],G_nx[5];
+	double Gp[5]={0.2,0.2,0.2,0.2,0.2};
+
+	tmp=0;
+	for (i=0; i<cf_num-1; i++)
+	{
+		G_nx[i] = ceil(Gp[i]*nx);
+		tmp += G_nx[i];
+	}
+	G_nx[cf_num-1]=nx-tmp;
+
+	G[0]=0;
+	for (i=1; i<cf_num; i++)
+	{
+		G[i] = G[i-1]+G_nx[i-1];
+	}
+
+	sr_func (x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
+
+	for (i=0; i<nx; i++)
+	{
+		y[i]=z[S[i]-1];
+	}
+	
+	i=0;
+	ellips_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=1;
 	ackley_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=2;
+	rastrigin_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=3;
+	hgbat_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=4;
+	discus_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+
+	f[0]=0.0;
+	for(i=0;i<cf_num;i++)
+	{
+		f[0] += fit[i];
+	}
+}
+
+void hf09 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag,int r_flag) /* Hybrid Function 6 */
+{
+	int i,tmp,cf_num=5;
+	double fit[5];
+	int G[5],G_nx[5];
+	double Gp[5]={0.2,0.2,0.2,0.2,0.2};
+
+	tmp=0;
+	for (i=0; i<cf_num-1; i++)
+	{
+		G_nx[i] = ceil(Gp[i]*nx);
+		tmp += G_nx[i];
+	}
+	G_nx[cf_num-1]=nx-tmp;
+
+	G[0]=0;
+	for (i=1; i<cf_num; i++)
+	{
+		G[i] = G[i-1]+G_nx[i-1];
+	}
+
+	sr_func (x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
+
+	for (i=0; i<nx; i++)
+	{
+		y[i]=z[S[i]-1];
+	}
+	
+	i=0;
+	bent_cigar_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=1;
+	rastrigin_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=2;
+	grie_rosen_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=3;
+	weierstrass_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=4;
+	escaffer6_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+
+	f[0]=0.0;
+	for(i=0;i<cf_num;i++)
+	{
+		f[0] += fit[i];
+	}
+}
+
+
+void hf10 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag,int r_flag) /* Hybrid Function 6 */
+{
+	int i,tmp,cf_num=6;
+	double fit[6];
+	int G[6],G_nx[6];
+	double Gp[6]={0.1,0.1,0.2,0.2,0.2,0.2};
+
+	tmp=0;
+	for (i=0; i<cf_num-1; i++)
+	{
+		G_nx[i] = ceil(Gp[i]*nx);
+		tmp += G_nx[i];
+	}
+	G_nx[cf_num-1]=nx-tmp;
+
+	G[0]=0;
+	for (i=1; i<cf_num; i++)
+	{
+		G[i] = G[i-1]+G_nx[i-1];
+	}
+
+	sr_func (x, z, nx, Os, Mr, 1.0, s_flag, r_flag); /* shift and rotate */
+
+	for (i=0; i<nx; i++)
+	{
+		y[i]=z[S[i]-1];
+	}
+	
+	i=0;
+	hgbat_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=1;
+	katsuura_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=2;
+	ackley_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=3;
+	rastrigin_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=4;
+	schwefel_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+	i=5;
+	schaffer_F7_func(&y[G[i]],&fit[i],G_nx[i],Os,Mr,0,0);
+
 	f[0]=0.0;
 	for(i=0;i<cf_num;i++)
 	{
@@ -1005,84 +1289,75 @@ void hf06 (double *x, double *f, int nx, double *Os,double *Mr,int *S,int s_flag
 
 void cf01 (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Composition Function 1 */
 {
-	int i,cf_num=5;
-	double fit[5];
-	double delta[5] = {10, 20, 30, 40, 50};
-	double bias[5] = {0, 100, 200, 300, 400};
+	int i,cf_num=3;
+	double fit[3];
+	double delta[3] = {10, 20, 30};
+	double bias[3] = {0, 100, 200};
 	
 	i=0;
 	rosenbrock_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=10000*fit[i]/1e+4;	
 	i=1;
 	ellips_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
 	fit[i]=10000*fit[i]/1e+10;
 	i=2;
-	bent_cigar_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=10000*fit[i]/1e+30;	
-	i=3;
-	discus_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=10000*fit[i]/1e+10;	
-	i=4;
-	ellips_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,0);
-	fit[i]=10000*fit[i]/1e+10;	
-	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num);
+	rastrigin_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num); 
 }
 
 void cf02 (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Composition Function 2 */
 {
 	int i,cf_num=3;
 	double fit[3];
-	double delta[3] = {20,20,20};
+	double delta[3] = {10,20,30};
 	double bias[3] = {0, 100, 200};
 
 	i=0;
-	schwefel_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,0);
-	i=1;
 	rastrigin_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	i=1;
+	griewank_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=1000*fit[i]/100;
 	i=2;
-	hgbat_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	schwefel_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
 	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num);
 }
 
 void cf03 (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Composition Function 3 */
 {
-	int i,cf_num=3;
-	double fit[3];
-	double delta[3] = {10,30,50};
-	double bias[3] = {0, 100, 200};
+	int i,cf_num=4;
+	double fit[4];
+	double delta[4] = {10,20,30,40};
+	double bias[4] = {0, 100, 200, 300};
+	
 	i=0;
-	schwefel_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=1000*fit[i]/4e+3;
+	rosenbrock_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
 	i=1;
-	rastrigin_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=1000*fit[i]/1e+3;
+	ackley_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=1000*fit[i]/100;
 	i=2;
-	ellips_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=1000*fit[i]/1e+10;
-	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num);
-}
-
-void cf04 (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Composition Function 4 */
-{
-	int i,cf_num=5;
-	double fit[5];
-	double delta[5] = {10,10,10,10,10};
-	double bias[5] = {0, 100, 200, 300, 400};
-	i=0;
 	schwefel_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=1000*fit[i]/4e+3;
-	i=1;
-	happycat_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=1000*fit[i]/1e+3;
-	i=2;
-	ellips_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=1000*fit[i]/1e+10;
 	i=3;
-	weierstrass_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=1000*fit[i]/400;
-	i=4;
+	rastrigin_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num); 
+	
+}
+void cf04 (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Composition Function 3 */
+{
+	int i,cf_num=4;
+	double fit[4];
+	double delta[4] = {10,20,30,40};
+	double bias[4] = {0, 100, 200, 300};
+	
+	i=0;
+	ackley_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=1000*fit[i]/100;
+	i=1;
+	ellips_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=10000*fit[i]/1e+10;
+	i=2;
 	griewank_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
 	fit[i]=1000*fit[i]/100;
+	i=3;
+	rastrigin_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
 	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num);
 }
 
@@ -1090,8 +1365,54 @@ void cf05 (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Co
 {
 	int i,cf_num=5;
 	double fit[5];
-	double delta[5] = {10,10,10,20,20};
+	double delta[5] = {10,20,30,40,50};
 	double bias[5] = {0, 100, 200, 300, 400};
+	i=0;
+	rastrigin_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=10000*fit[i]/1e+3;
+	i=1;
+	happycat_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=1000*fit[i]/1e+3;
+	i=2;
+	ackley_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=1000*fit[i]/100;
+	i=3;
+	discus_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=10000*fit[i]/1e+10;	
+	i=4;
+	rosenbrock_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num);
+}		
+
+
+void cf06 (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Composition Function 4 */
+{
+	int i,cf_num=5;
+	double fit[5];
+	double delta[5] = {10,20,20,30,40};
+	double bias[5] = {0, 100, 200, 300, 400};
+	i=0;
+	escaffer6_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=10000*fit[i]/2e+7;
+	i=1;
+	schwefel_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	i=2;
+	griewank_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=1000*fit[i]/100;
+	i=3;
+	rosenbrock_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	i=4;
+	rastrigin_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=10000*fit[i]/1e+3;
+	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num);
+}
+
+void cf07 (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Composition Function 4 */
+{
+	int i,cf_num=6;
+	double fit[6];
+	double delta[6] = {10,20,30,40,50,60};
+	double bias[6] = {0, 100, 200, 300, 400, 500};
 	i=0;
 	hgbat_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
 	fit[i]=10000*fit[i]/1000;
@@ -1102,68 +1423,75 @@ void cf05 (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Co
 	schwefel_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
 	fit[i]=10000*fit[i]/4e+3;
 	i=3;
-	weierstrass_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=10000*fit[i]/400;
+	bent_cigar_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=10000*fit[i]/1e+30;
 	i=4;
 	ellips_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
 	fit[i]=10000*fit[i]/1e+10;
-	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num);
-}
-
-void cf06 (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Composition Function 6 */
-{
-	int i,cf_num=5;
-	double fit[5];
-	double delta[5] = {10,20,30,40,50};
-	double bias[5] = {0, 100, 200, 300, 400};
-	i=0;
-	grie_rosen_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=10000*fit[i]/4e+3;
-	i=1;
-	happycat_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=10000*fit[i]/1e+3;
-	i=2;
-	schwefel_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
-	fit[i]=10000*fit[i]/4e+3;
-	i=3;
+	i=5;
 	escaffer6_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
 	fit[i]=10000*fit[i]/2e+7;
-	i=4;
-	ellips_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num); 
+}
+
+void cf08 (double *x, double *f, int nx, double *Os,double *Mr,int r_flag) /* Composition Function 4 */
+{	
+	int i,cf_num=6;
+	double fit[6];
+	double delta[6] = {10,20,30,40,50,60};
+	double bias[6] = {0, 100, 200, 300, 400, 500};
+	i=0;
+	ackley_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=1000*fit[i]/100;
+	i=1;
+	griewank_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=1000*fit[i]/100;
+	i=2;
+	discus_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
 	fit[i]=10000*fit[i]/1e+10;
+	i=3;
+	rosenbrock_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	i=4;
+	happycat_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=1000*fit[i]/1e+3;
+	i=5;
+	escaffer6_func(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],1,r_flag);
+	fit[i]=10000*fit[i]/2e+7;
 	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num);
 }
 
-void cf07 (double *x, double *f, int nx, double *Os,double *Mr,int *SS,int r_flag) /* Composition Function 7 */
+
+void cf09 (double *x, double *f, int nx, double *Os,double *Mr,int *SS,int r_flag)
 {
+	
 	int i,cf_num=3;
 	double fit[3];
 	double delta[3] = {10,30,50};
 	double bias[3] = {0, 100, 200};
 	i=0;
-	hf01(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],&SS[i*nx],1,r_flag);
-	i=1;
-	hf02(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],&SS[i*nx],1,r_flag);
-	i=2;
-	hf03(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],&SS[i*nx],1,r_flag);
-	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num);
-}
-
-void cf08 (double *x, double *f, int nx, double *Os,double *Mr,int *SS,int r_flag) /* Composition Function 8 */
-{
-	int i,cf_num=3;
-	double fit[3];
-	double delta[3] = {10,30,50};
-	double bias[3] = {0, 100, 200};
-	i=0;
-	hf04(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],&SS[i*nx],1,r_flag);
-	i=1;
 	hf05(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],&SS[i*nx],1,r_flag);
-	i=2;
+	i=1;
 	hf06(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],&SS[i*nx],1,r_flag);
+	i=2;
+	hf07(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],&SS[i*nx],1,r_flag);
 	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num);
+		
 }
 
+void cf10 (double *x, double *f, int nx, double *Os,double *Mr,int *SS,int r_flag) 
+{
+	int i,cf_num=3;
+	double fit[3];
+	double delta[3] = {10,30,50};
+	double bias[3] = {0, 100, 200};
+	i=0;
+	hf05(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],&SS[i*nx],1,r_flag);
+	i=1;
+	hf08(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],&SS[i*nx],1,r_flag);
+	i=2;
+	hf09(x,&fit[i],nx,&Os[i*nx],&Mr[i*nx*nx],&SS[i*nx],1,r_flag);
+	cf_cal(x, f, nx, Os, delta,bias,fit,cf_num);
+}
 
 
 void shiftfunc (double *x, double *xshift, int nx,double *Os)

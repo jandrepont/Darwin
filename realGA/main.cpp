@@ -15,7 +15,7 @@
 #include <pthread.h>
 #include <malloc.h>
 
-void cec14_test_func(double *, double *,int,int,int);
+void cec17_test_func(double *, double *,int,int,int);
 
 double *OShift,*M,*y,*z,*x_bound;
 int ini_flag=0,n_flag,func_flag,*SS;
@@ -71,7 +71,7 @@ int main(int argc, char *argv[]){
     int popNum = 0;
 
     gen->returnInput(x);
-    cec14_test_func(x, f,nvars,nchroms,func_num);
+    cec17_test_func(x, f,nvars,nchroms,func_num);
     gen->calcfitness(f);
 //    gen->dummyFitness();
     gen->sort(0, nchroms);
@@ -84,7 +84,7 @@ int main(int argc, char *argv[]){
         gen->createNew();
         gen->mutate();
         gen->returnInput(x);
-        cec14_test_func(x, f,nvars,nchroms,func_num);
+        cec17_test_func(x, f,nvars,nchroms,func_num);
         gen->calcfitness(f);
 //        gen->dummyFitness();
         gen->sort(0, nchroms);
