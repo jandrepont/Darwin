@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.4)
-project(realGA)
+project(binGA)
 
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake) # add custom package modules
 
@@ -21,13 +21,14 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -Wall -Werror=return-type 
 set(SOURCE_FILES
         Chromosome.cpp
         Chromosome.h
-#        GA.cpp
-#        GA.h
-#        main.cpp
+#        test.cpp
+        GA.cpp
+        GA.h
+        main.cpp
                         )
 
-add_executable(realGA ${SOURCE_FILES})
+add_executable(binGA ${SOURCE_FILES})
 
 set(CURL_LIBRARY "-lcurl")
 
-target_link_libraries(realGA -pthread ${CMAKE_THREAD_LIBS_INIT} )
+target_link_libraries(binGA -pthread ${CMAKE_THREAD_LIBS_INIT} )

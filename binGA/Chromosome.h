@@ -14,7 +14,7 @@ class Chromosome {
 public:
 
     Chromosome();
-    Chromosome(int &r_nvars, float &min, float &max );
+    Chromosome(int r_nvars, float min, float max, int chrom_length);
 
     ~Chromosome();
 
@@ -33,6 +33,9 @@ public:
     double get_nvars();
     void set_nvars(int r_nvars);
 
+    int get_gene(int index);
+    void set_gene(int index, int val);
+
     /*
      * Genealogy functions
      */
@@ -50,6 +53,16 @@ private:
     std::vector<std::string> origin;
     int nvars;
 };
+
+inline int Chromosome::get_gene(int index)
+{
+    return gene[index];
+}
+inline void Chromosome::set_gene(int index, int val)
+{
+    gene[index] = val;
+}
+
 inline double Chromosome::get_nvars()
 {
     return nvars;

@@ -15,9 +15,9 @@ GA::GA()
     nelites = 5;
     generation = 0;
     nvars = 10;
-    min = -1024;
-    max = 1023;
-
+    min = -100;
+    max = 100;
+    ngenes = 160;
 
     for(int i = 0; i < 2; i++){
         pop.push_back(std::vector<Chromosome>());
@@ -26,7 +26,7 @@ GA::GA()
         }
     }
 }
-GA::GA(int r_ncross, int r_nmute, int r_nchroms, int r_nelites, int r_nvars, float r_min, float r_max)
+GA::GA(int r_ncross, int r_nmute, int r_chrom_length, int r_nchroms, int r_nelites, int r_nvars, float r_min, float r_max)
 {
     popNum = 0;
     ncross = r_ncross;
@@ -37,10 +37,12 @@ GA::GA(int r_ncross, int r_nmute, int r_nchroms, int r_nelites, int r_nvars, flo
     generation = 0;
     min = r_min;
     max = r_max;
-    for(int i = 0; i < 2; i++){
+    chrom_length = r_chrom_length;
+    ngenes = r_chrom_length * r_nchroms;
+        for(int i = 0; i < 2; i++){
         pop.push_back(std::vector<Chromosome>());
         for(int j = 0; j < nchroms; j++){
-            pop[i].push_back(Chromosome(r_nvars, min, max));
+            pop[i].push_back(Chromosome(r_nvars, min, max, r_chrom_length));
         }
     }
 }
@@ -111,11 +113,9 @@ void GA::crossover()
 {
     int prevPop = ((popNum+1)%2);
     int ran1, ran2, crosspoint;
-    double weight;
-    std::uniform_int_distribution<int> i_dist(0, nvars-1);
+    std::uniform_int_distribution<int> i_dist(0, ngenes-1);
     std::mt19937 rng;
     rng.seed(std::random_device{}());
-    std::uniform_real_distribution<double> real_distribution(0.0, 1.0);
     double val1, val2, p1, p2;
     std::vector<std::string> child_origin;
     child_origin.push_back(" ");
@@ -125,27 +125,18 @@ void GA::crossover()
         crosspoint = i_dist(rng);
         ran1 = rouletteWheel();
         ran2 = rouletteWheel();
-        weight = real_distribution(rng);
         while(ran1 == ran2){
             ran2 = rouletteWheel();
 //            printf("random parent 1 = %d\nrandom parent 2 = %d \n", ran1, ran2);
         }
-        for(int cross = 0; cross < 8; cross++){
-            if(cross == crosspoint){
-                p1 = pop[prevPop][ran1].getvar(cross);
-                p2 = pop[prevPop][ran2].getvar(cross);
-                val1 = (p1*weight) + ((1 - weight)*p2);
-                val2 = (p1*(1-weight)) + (weight*p2);
-                pop[popNum][child].setvar(cross, val1);
-                pop[popNum][child+1].setvar(cross, val2);
-            }
-            else if(cross < crosspoint){
-                pop[popNum][child].setvar(cross, pop[prevPop][ran1].getvar(cross));
-                pop[popNum][child+1].setvar(cross, pop[prevPop][ran2].getvar(cross));
+        for(int cross = 0; cross < ngenes; cross++){
+            else if(cross <= crosspoint){
+                pop[popNum][child].set_gene(cross, pop[prevPop][ran1].get_gene(cross));
+                pop[popNum][child+1].set_gene(cross, pop[prevPop][ran2].get_gene(cross));
             }
             else{
-                pop[popNum][child].setvar(cross, pop[prevPop][ran2].getvar(cross));
-                pop[popNum][child+1].setvar(cross, pop[prevPop][ran1].getvar(cross));
+                pop[popNum][child].set_gene(cross, pop[prevPop][ran2].get_gene(cross));
+                pop[popNum][child+1].set_gene(cross, pop[prevPop][ran1].get_gene(cross));
             }
         }
 
@@ -192,20 +183,19 @@ int GA::partition(int p, int q)
 
 void GA::mutate()
 {
-    int ran_gene, ran_chrom;
-    double var;
+    int ran_gene, ran_chrom, gene_val;
     std::mt19937 rng;
     rng.seed(std::random_device{}());
     std::string add_origin;
-    std::uniform_int_distribution<int> i_dist(0,nvars-1);
-    std::uniform_real_distribution<double> r_dist(min, max);
+    std::uniform_int_distribution<int> i_dist(0,ngenes-1);
     for(int i = 0; i < nmute; i++) {
-        var = r_dist(rng);
         i_dist = std::uniform_int_distribution<int> (0, nvars-1);
         ran_gene = i_dist(rng);
         i_dist = std::uniform_int_distribution<int> (nelites, nchroms-1);
         ran_chrom = i_dist(rng);
-        pop[popNum][ran_chrom].setvar(ran_gene, var);
+        gene_val = pop[popNum][ran_chrom].get_gene(ran_gene);
+        gene_val = (gene_val+1)%2;
+        pop[popNum][ran_chrom].set_gene(ran_gene, gene_val);
 
         add_origin = "Gene [";
         add_origin += std::to_string(ran_gene);
@@ -224,7 +214,7 @@ void GA::createNew()
     int index = 0;
     for(int i = 0; i < newChrom; i++){
         index = nchroms - 1 - i;
-        pop[popNum][index] = Chromosome(nvars, min, max);
+        pop[popNum][index] = Chromosome(nvars, min, max,chrom_length);
         pop[popNum][index].rewrite_resize_origin(new_origin);
 //        printf("Index = %d\n",index);
     }

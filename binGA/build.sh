@@ -15,13 +15,13 @@ rm -rf *
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ ..
 #make VERBOSE=1
 make -j$CORES
-mv realGA ../dist
+mv binGA ../dist
 
 rm -rf *
 cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ ..
 #make VERBOSE=1
 make -j$CORES
-mv realGA ../dist
+mv binGA ../dist
 
 
 cd ..

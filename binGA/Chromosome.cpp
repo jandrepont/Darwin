@@ -28,7 +28,7 @@ Chromosome::Chromosome()
 
     origin.push_back("initial generation: 0");
 }
-Chromosome::Chromosome(int &r_nvars, float &min, float &max, int &chrom_length ) {
+Chromosome::Chromosome(int r_nvars, float min, float max, int chrom_length ) {
 
     fitness = 0;
     nvars = r_nvars;
@@ -38,14 +38,22 @@ Chromosome::Chromosome(int &r_nvars, float &min, float &max, int &chrom_length )
     rng.seed(std::random_device{}());
 //    std::vector<int> unbounded_val;
     double temp_val;
+    int constraint;
+    int length;
+    length = nvars * chrom_length;
     temp_val = 0;
-    for(int i = 0; i < 160; i++){
+    constraint = chrom_length;
+    constraint = pow(2,constraint);
+    constraint -= 1;
+    for(int i = 0; i < length; i++){
         gene.push_back(integer_distribution(rng));
         if(gene[i] == 1){
-            temp_val += pow(2, i);
+            temp_val += pow(2, (i%chrom_length));
         }
-        if(i % chrom_length == 0 && i != 0){
-            temp_val = ((temp_val - 32768) / 32);
+        if((i % chrom_length) == 0 && i != 0 || i == length-1){
+            temp_val = temp_val-constraint;
+            temp_val = temp_val/constraint;
+            temp_val = temp_val*max;
             var.push_back(temp_val);
             temp_val = 0;
         }
