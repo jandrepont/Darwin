@@ -50,7 +50,7 @@ Chromosome::Chromosome(int r_nvars, float min, float max, int chrom_length ) {
         if(gene[i] == 1){
             temp_val += pow(2, (i%chrom_length));
         }
-        if((i % chrom_length) == 0 && i != 0 || i == length-1){
+        if(((i % chrom_length) == 0 && i != 0) || i == length-1){
             temp_val = temp_val-constraint;
             temp_val = temp_val/constraint;
             temp_val = temp_val*max;
@@ -65,7 +65,7 @@ Chromosome::~Chromosome()
 //    delete [] var;
 }
 
-void Chromosome::setAllvar(std::vector<double> rvar)
+void Chromosome::setAllvar(std::vector<double>& rvar)
 {
     var = std::move(rvar);
 }

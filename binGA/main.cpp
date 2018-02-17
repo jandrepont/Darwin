@@ -80,7 +80,7 @@ int main(int argc, char *argv[]){
 //    gen->dummyFitness();
     gen->sort(0, nchroms);
 
-    for(int epoch = 0; epoch < nepochs; epoch++){
+    for(int epoch = 0; epoch < 2; epoch++){
         popNum = ((popNum+1)%2);
         gen->setpopNum(popNum);
         gen->preserveElites();
@@ -92,11 +92,14 @@ int main(int argc, char *argv[]){
         gen->calcfitness(f);
 //        gen->dummyFitness();
         gen->sort(0, nchroms);
-//        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < 200; i++){
 //            printf("epoch[%d] chrom[%d] fit = %f\n",epoch,i, gen->pop[popNum][i].getFitness());
-//
-//        }
-        printf("epoch[%d] chrom[%d] fit = %f\n",epoch,0, gen->pop[popNum][0].getFitness());
+//            for(int j = 0; j < 30; j++){
+//                printf("epoch[%d] chrom[%d] var = %f\n",epoch,i, gen->pop[popNum][i].getvar(j));
+//            }
+
+        }
+//        printf("epoch[%d] chrom[%d] fit = %f\n",epoch,0, gen->pop[popNum][0].getFitness());
 
     }
 

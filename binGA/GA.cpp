@@ -38,7 +38,7 @@ GA::GA(int r_ncross, int r_nmute, int r_chrom_length, int r_nchroms, int r_nelit
     min = r_min;
     max = r_max;
     chrom_length = r_chrom_length;
-    ngenes = r_chrom_length * r_nchroms;
+    ngenes = r_chrom_length * r_nvars;
         for(int i = 0; i < 2; i++){
         pop.push_back(std::vector<Chromosome>());
         for(int j = 0; j < nchroms; j++){
@@ -86,16 +86,18 @@ int GA::rouletteWheel()
     return wheel;
 }
 
-void GA::calcfitness()
+void GA::calcfitness(double* f)
 {
-    std::vector<double> vars;
-    double fitness;
     for(int i = 0; i < nchroms; i++){
-        vars = pop[popNum][i].getAllvar();
-        fitness = (vars[0]+vars[1]+vars[2]+vars[3]+vars[4]+vars[5]+vars[6]+vars[7])/10000000;
-        pop[popNum][i].setFitness(fitness);
+        pop[popNum][i].setFitness(f[i]);
     }
+}
 
+void GA::dummyFitness()
+{
+    for(int i = 0; i < nchroms; i++){
+        pop[popNum][i].setFitness(1.0);
+    }
 }
 
 void GA::preserveElites()
@@ -113,24 +115,22 @@ void GA::crossover()
 {
     int prevPop = ((popNum+1)%2);
     int ran1, ran2, crosspoint;
-    std::uniform_int_distribution<int> i_dist(0, ngenes-1);
+    std::uniform_int_distribution<int> i_dist(1, ngenes-2);
     std::mt19937 rng;
     rng.seed(std::random_device{}());
     double val1, val2, p1, p2;
     std::vector<std::string> child_origin;
     child_origin.push_back(" ");
     std::ostringstream os;
-
     for(int child = nelites; child < ncross+nelites; child+=2){
         crosspoint = i_dist(rng);
         ran1 = rouletteWheel();
         ran2 = rouletteWheel();
         while(ran1 == ran2){
             ran2 = rouletteWheel();
-//            printf("random parent 1 = %d\nrandom parent 2 = %d \n", ran1, ran2);
         }
         for(int cross = 0; cross < ngenes; cross++){
-            else if(cross <= crosspoint){
+            if(cross <= crosspoint){
                 pop[popNum][child].set_gene(cross, pop[prevPop][ran1].get_gene(cross));
                 pop[popNum][child+1].set_gene(cross, pop[prevPop][ran2].get_gene(cross));
             }
@@ -170,7 +170,7 @@ int GA::partition(int p, int q)
 
     for(j = p+1; j<q; j++)
     {
-        if(pop[popNum][j].getFitness() >= x)
+        if(pop[popNum][j].getFitness() <= x)
         {
             i = i + 1;
             std::swap(pop[popNum][i], pop[popNum][j]);
@@ -189,7 +189,6 @@ void GA::mutate()
     std::string add_origin;
     std::uniform_int_distribution<int> i_dist(0,ngenes-1);
     for(int i = 0; i < nmute; i++) {
-        i_dist = std::uniform_int_distribution<int> (0, nvars-1);
         ran_gene = i_dist(rng);
         i_dist = std::uniform_int_distribution<int> (nelites, nchroms-1);
         ran_chrom = i_dist(rng);
@@ -219,6 +218,21 @@ void GA::createNew()
 //        printf("Index = %d\n",index);
     }
 
+}
+
+void GA::returnInput(double *x)
+{
+    double temp;
+    int count;
+    count = 0;
+    for(int i = 0; i < nchroms; i++){
+        for(int j = 0; j < nvars; j++){
+            temp = pop[popNum][i].getvar(j);
+            printf("\n temp = %f", temp);
+            x[count] = temp;
+            count++;
+        }
+    }
 }
 
 

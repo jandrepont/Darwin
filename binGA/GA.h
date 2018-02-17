@@ -34,6 +34,11 @@ public:
     void settopFit(double rtopFit);
     int getpopNum();
     void setpopNum(int rpopNum);
+    void returnInput(double *x);
+    void calcfitness(double* f);
+    void dummyFitness();
+
+
 
 
     //getters and setters for member vars;

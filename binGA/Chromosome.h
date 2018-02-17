@@ -25,7 +25,7 @@ public:
     void setvar(int index, double rvar);
 
     std::vector<double> const &getAllvar() const;
-    void setAllvar(std::vector<double>);
+    void setAllvar(std::vector<double>& rvar);
 
     double getFitness();
     void setFitness(double fitness);

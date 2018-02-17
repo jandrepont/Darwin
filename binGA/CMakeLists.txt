@@ -21,7 +21,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -Wall -Werror=return-type 
 set(SOURCE_FILES
         Chromosome.cpp
         Chromosome.h
-#        test.cpp
+        cec17_test_func.cpp
         GA.cpp
         GA.h
         main.cpp
