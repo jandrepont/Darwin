@@ -13,53 +13,102 @@
 #include <json-c/json.h>
 #include <curl/curl.h>
 #include <pthread.h>
+#include <malloc.h>
 
+void cec17_test_func(double *, double *,int,int,int);
+
+double *OShift,*M,*y,*z,*x_bound;
+int ini_flag=0,n_flag,func_flag,*SS;
 
 int main(int argc, char *argv[]){
+
 
     /*
      * set up dyn GA
      */
-    int cross, mute, chroms, elites, vars;
+    int standard, nchroms, ncross, nmute, nelites, nvars, nepochs, chrom_length;
     float min, max;
-    printf("chroms = ");
-    scanf("%d", &chroms);
-    printf("cross = ");
-    scanf("%d", &cross);
-    printf("mutation = ");
-    scanf("%d", &mute);
-    printf("elites = ");
-    scanf("%d", &elites);
-    printf("min = ");
-    scanf("%f", &min);
-    printf("max = ");
-    scanf("%f", &max);
-    printf("vars = ");
-    scanf("%d", &vars);
+    printf("0 for standard, 1 for custom: ");
+    scanf("%d", &standard);
+    if(standard == 1) {
+        printf("chroms = ");
+        scanf("%d", &nchroms);
+        printf("chrom length = ");
+        scanf("%d", &chrom_length);
+        printf("cross = ");
+        scanf("%d", &ncross);
+        printf("mutation = ");
+        scanf("%d", &nmute);
+        printf("elites = ");
+        scanf("%d", &nelites);
+        printf("min = ");
+        scanf("%f", &min);
+        printf("max = ");
+        scanf("%f", &max);
+        printf("vars = ");
+        scanf("%d", &nvars);
+        printf("epochs = ");
+        scanf("%d", &nepochs);
+    } else{
+        ncross = 160;
+        nmute = 10;
+        nchroms = 200;
+        nelites = 20;
+        nvars = 30;
+        nepochs = 2000;
+        min = -100;
+        max = 100;
+        chrom_length = 16;
+    }
+
+    int i,j,k,n,m,func_num;
+    double *f,*x,*y;
+    printf("func num = ");
+    scanf("%d", &func_num);
+
+    x=(double *)malloc(nchroms*nvars*sizeof(double));
+    f=(double *)malloc(sizeof(double)  *  nchroms);
+
     GA *gen;
-    gen = new GA(cross, mute, chroms, elites, vars, min, max);
+
+    gen = new GA(ncross, nmute, chrom_length, nchroms, nelites, nvars, min, max);
     int popNum = 0;
-    gen->calcfitness();
-    gen->sort(0, gen->get_nchroms());
-    for(int epoch = 0; epoch < 100; epoch++){
+
+    gen->returnInput(x);
+    cec17_test_func(x, f,nvars,nchroms,func_num);
+    gen->calcfitness(f);
+//    gen->dummyFitness();
+    gen->sort(0, nchroms);
+
+    for(int epoch = 0; epoch < 2; epoch++){
         popNum = ((popNum+1)%2);
         gen->setpopNum(popNum);
         gen->preserveElites();
         gen->crossover();
         gen->createNew();
         gen->mutate();
-        gen->calcfitness();
-        gen->sort(0, gen->get_nchroms());
-        printf("epoch[%d] chrom[%d] fit = %f\n",epoch, gen->pop[popNum][0].getFitness());
-
-//        for(int j = 0; j < 5; j++){
-//            for(int k = 0; k < vars; k++){
-//                printf("epoch[%d] chrom[%d].var[%d] = %f\n",epoch, j, k, gen->pop[popNum][j].getvar(k));
-//
+        gen->returnInput(x);
+        cec17_test_func(x, f,nvars,nchroms,func_num);
+        gen->calcfitness(f);
+//        gen->dummyFitness();
+        gen->sort(0, nchroms);
+        for(int i = 0; i < 200; i++){
+//            printf("epoch[%d] chrom[%d] fit = %f\n",epoch,i, gen->pop[popNum][i].getFitness());
+//            for(int j = 0; j < 30; j++){
+//                printf("epoch[%d] chrom[%d] var = %f\n",epoch,i, gen->pop[popNum][i].getvar(j));
 //            }
-//        }
+
+        }
+//        printf("epoch[%d] chrom[%d] fit = %f\n",epoch,0, gen->pop[popNum][0].getFitness());
+
     }
 
+    free(x);
+    free(f);
+    free(z);
+    free(M);
+    free(OShift);
+    free(x_bound);
     delete gen;
     return 0;
 }

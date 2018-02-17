@@ -88,10 +88,6 @@ int main(int argc, char *argv[]){
         gen->calcfitness(f);
 //        gen->dummyFitness();
         gen->sort(0, nchroms);
-//        for(int i = 0; i < 100; i++){
-//            printf("epoch[%d] chrom[%d] fit = %f\n",epoch,i, gen->pop[popNum][i].getFitness());
-//
-//        }
         printf("epoch[%d] chrom[%d] fit = %f\n",epoch,0, gen->pop[popNum][0].getFitness());
 
     }

@@ -13,7 +13,7 @@ class GA
 {
 public:
     GA();
-    GA(int r_ncross, int r_nmute, int r_nchroms, int r_nelites, int r_nvars, float min, float max);
+    GA(int r_ncross, int r_nmute, int chrom_length, int r_nchroms, int r_nelites, int r_nvars, float min, float max);
 
     std::vector< std::vector<Chromosome> > pop;
     //Chromosome pop[2][50];
@@ -34,6 +34,11 @@ public:
     void settopFit(double rtopFit);
     int getpopNum();
     void setpopNum(int rpopNum);
+    void returnInput(double *x);
+    void calcfitness(double* f);
+    void dummyFitness();
+
+
 
 
     //getters and setters for member vars;
@@ -61,7 +66,7 @@ public:
 private:
 
 
-    int ncross, nmute, nchroms, nelites, nvars;
+    int ncross, nmute, nchroms, nelites, nvars, ngenes, chrom_length;
     float min, max;
     int popNum;
     int generation;
