@@ -33,7 +33,7 @@ GA::GA(int r_ncross, int r_nmute, int r_chrom_length, int r_nchroms, int r_nelit
     nmute = r_nmute;
     nchroms = r_nchroms;
     nelites = r_nelites;
-    nvars = 10;
+    nvars = r_nvars;
     generation = 0;
     min = r_min;
     max = r_max;
@@ -228,7 +228,6 @@ void GA::returnInput(double *x)
     for(int i = 0; i < nchroms; i++){
         for(int j = 0; j < nvars; j++){
             temp = pop[popNum][i].getvar(j);
-            printf("\n temp = %f", temp);
             x[count] = temp;
             count++;
         }
