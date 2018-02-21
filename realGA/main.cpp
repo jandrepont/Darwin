@@ -66,38 +66,41 @@ int main(int argc, char *argv[]){
     x=(double *)malloc(nchroms*nvars*sizeof(double));
     f=(double *)malloc(sizeof(double)  *  nchroms);
 
-    GA *gen;
-    gen = new GA(ncross, nmute, nchroms, nelites, nvars, min, max);
-    int popNum = 0;
+    for(int run = 0; run < 30; run++) {
 
-    gen->returnInput(x);
-    cec17_test_func(x, f,nvars,nchroms,func_num);
-    gen->calcfitness(f);
-//    gen->dummyFitness();
-    gen->sort(0, nchroms);
+        GA *gen;
+        gen = new GA(ncross, nmute, nchroms, nelites, nvars, min, max);
+        int popNum = 0;
 
-    for(int epoch = 0; epoch < nepochs; epoch++){
-        popNum = ((popNum+1)%2);
-        gen->setpopNum(popNum);
-        gen->preserveElites();
-        gen->crossover();
-        gen->createNew();
-        gen->mutate();
         gen->returnInput(x);
-        cec17_test_func(x, f,nvars,nchroms,func_num);
+        cec17_test_func(x, f, nvars, nchroms, func_num);
         gen->calcfitness(f);
-//        gen->dummyFitness();
+//    gen->dummyFitness();
         gen->sort(0, nchroms);
-        printf("epoch[%d] chrom[%d] fit = %f\n",epoch,0, gen->pop[popNum][0].getFitness());
 
+        for (int epoch = 0; epoch < nepochs; epoch++) {
+            popNum = ((popNum + 1) % 2);
+            gen->setpopNum(popNum);
+            gen->preserveElites();
+            gen->crossover();
+            gen->createNew();
+            gen->mutate();
+            gen->returnInput(x);
+            cec17_test_func(x, f, nvars, nchroms, func_num);
+            gen->calcfitness(f);
+//        gen->dummyFitness();
+            gen->sort(0, nchroms);
+        }
+        printf("%d, %f\n", run, gen->pop[popNum][0].getFitness());
+
+        delete gen;
     }
-
     free(x);
     free(f);
     free(z);
     free(M);
     free(OShift);
     free(x_bound);
-    delete gen;
+//    delete gen;
     return 0;
 }
