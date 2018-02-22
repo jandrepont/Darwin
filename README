@@ -1,5 +1,60 @@
-Work in progress. 
+Work in progress.
 
 
 Darwin is a prototype Genetic Algorithm. Currently it holds a binary and real form of the algorithm in C++
-Improved form not currently posted. Waiting on acceptance.  
+Improved form not currently posted. Waiting on acceptance.
+
+Binary GA results:
+
+    binf1.csv mean =  87216327287.911851
+    binf3.csv mean =  79027715250.2077759
+    binf4.csv mean =  90774.62716986666666666666667
+    binf5.csv mean =  1144.084681833333333333333333
+    binf6.csv mean =  737.4465172666666666666666667
+    binf7.csv mean =  2654.236897933333333333333333
+    binf8.csv mean =  1260.3704994
+    binf9.csv mean =  24463.96799133333333333333333
+    binf10.csv mean =  8844.257616133333333333333333
+    binf11.csv mean =  13860.3506608
+    binf12.csv mean =  36698998149.0871486
+    binf13.csv mean =  43888126480.1524084
+    binf14.csv mean =  16317100.43527893333333333333
+    binf15.csv mean =  9095635502.269803033333333333
+    binf16.csv mean =  5911.260742833333333333333333
+    binf17.csv mean =  19532.9633368
+    binf18.csv mean =  26266203.66591406666666666667
+    binf19.csv mean =  11619074839.10749743333333333
+    binf20.csv mean =  3167.947321566666666666666667
+
+Real GA results:
+
+    realf1.csv mean =  15201102372.80997166666666667
+    realf3.csv mean =  137678.6072597333333333333333
+    realf4.csv mean =  3851.877709366666666666666667
+    realf5.csv mean =  765.8336787333333333333333333
+    realf6.csv mean =  626.5016054
+    realf7.csv mean =  1270.9319376
+    realf8.csv mean =  1015.2943086
+    realf9.csv mean =  5265.1986996
+    realf10.csv mean =  7137.657721366666666666666667
+    realf11.csv mean =  6133.510817533333333333333333
+    realf12.csv mean =  942356689.1306061
+    realf13.csv mean =  424222111.9011891
+    realf14.csv mean =  465622.3810915333333333333333
+    realf15.csv mean =  233213424.2034638
+    realf16.csv mean =  3828.667845733333333333333333
+    realf17.csv mean =  3093.431733733333333333333333
+    realf18.csv mean =  6050089.9433074
+    realf19.csv mean =  63804327.10848403333333333333
+    realf20.csv mean =  2713.298802966666666666666667
+
+Difference in performance, measured by relative change in size: |max(real,bin)| / |min(real,bin)|
+    F1 minimum realGA 573.7500159456504% smaller
+    F3 minimum realGA 57400141.40404578% smaller
+    F4 minimum realGA 2356.6331545035474% smaller
+    F5 minimum realGA
+    F6 minimum realGA
+    F7 minimum realGA
+    F8 minimum realGA
+    F9 minimum realGA
+    F10 minimum realGA
