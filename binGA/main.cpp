@@ -2,8 +2,8 @@
 // Created by joela on 1/4/18.
 //
 #include <iostream>
-#include "GA.h"
-#include "Chromosome.h"
+#include "BinGA.h"
+#include "BinChromosome.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
 
 
     /*
-     * set up dyn GA
+     * set up dyn BinGA
      */
     int standard, nchroms, ncross, nmute, nelites, nvars, nepochs, chrom_length;
     float min, max;
@@ -71,9 +71,9 @@ int main(int argc, char *argv[]){
 
     for(int run = 0; run < 30; run++) {
 
-        GA *gen;
+        BinGA *gen;
 
-        gen = new GA(ncross, nmute, chrom_length, nchroms, nelites, nvars, min, max);
+        gen = new BinGA(ncross, nmute, chrom_length, nchroms, nelites, nvars, min, max);
         int popNum = 0;
 
         gen->returnInput(x);
@@ -95,6 +95,7 @@ int main(int argc, char *argv[]){
     //        gen->dummyFitness();
             gen->sort(0, nchroms);
         }
+
         printf("%d, %f\n", run, gen->pop[popNum][0].getFitness());
         delete gen;
     }

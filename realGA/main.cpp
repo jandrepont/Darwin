@@ -2,8 +2,8 @@
 // Created by joela on 1/4/18.
 //
 #include <iostream>
-#include "GA.h"
-#include "Chromosome.h"
+#include "RealGA.h"
+#include "RealChromosome.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
 
 
     /*
-     * set up dyn GA
+     * set up dyn RealGA
      */
     int standard, nchroms, ncross, nmute, nelites, nvars, nepochs;
     float min, max;
@@ -68,8 +68,8 @@ int main(int argc, char *argv[]){
 
     for(int run = 0; run < 30; run++) {
 
-        GA *gen;
-        gen = new GA(ncross, nmute, nchroms, nelites, nvars, min, max);
+        RealGA *gen;
+        gen = new RealGA(ncross, nmute, nchroms, nelites, nvars, min, max);
         int popNum = 0;
 
         gen->returnInput(x);

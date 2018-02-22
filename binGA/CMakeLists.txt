@@ -19,11 +19,11 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -Wall -Werror=return-type 
 
 #source files
 set(SOURCE_FILES
-        Chromosome.cpp
-        Chromosome.h
+        BinChromosome.cpp
+        BinChromosome.h
         cec17_test_func.cpp
-        GA.cpp
-        GA.h
+        BinGA.cpp
+        BinGA.h
         main.cpp
                         )
 
