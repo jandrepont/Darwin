@@ -1,8 +1,7 @@
 Work in progress.
 
 
-Darwin is a prototype Genetic Algorithm. Currently it holds a binary and real form of the algorithm in C++
-Improved form not currently posted. Waiting on acceptance.
+Darwin is a prototype Genetic Algorithm. Combines binary and real GAs. 
 
 Binary GA results:
 
@@ -27,7 +26,6 @@ Binary GA results:
     binf20.csv mean =  3167.947321566666666666666667
 
 Real GA results:
-
     realf1.csv mean =  15201102372.80997166666666667
     realf3.csv mean =  137678.6072597333333333333333
     realf4.csv mean =  3851.877709366666666666666667

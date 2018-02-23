@@ -29,6 +29,7 @@ public:
     void mutate();
     void createNew();
     void iteration();
+    void calcVars(int chrom_length, double max);
 
     double gettopFit();
     void settopFit(double rtopFit);
@@ -37,6 +38,7 @@ public:
     void returnInput(double *x);
     void calcfitness(double* f);
     void dummyFitness();
+
 
 
 

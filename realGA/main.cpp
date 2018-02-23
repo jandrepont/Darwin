@@ -90,6 +90,7 @@ int main(int argc, char *argv[]){
             gen->calcfitness(f);
 //        gen->dummyFitness();
             gen->sort(0, nchroms);
+            printf("%d, %f\n", run, gen->pop[popNum][0].getvar(0));
         }
         printf("%d, %f\n", run, gen->pop[popNum][0].getFitness());
 

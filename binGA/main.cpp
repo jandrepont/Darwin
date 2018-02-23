@@ -69,6 +69,7 @@ int main(int argc, char *argv[]){
     x=(double *)malloc(nchroms*nvars*sizeof(double));
     f=(double *)malloc(sizeof(double)  *  nchroms);
 
+
     for(int run = 0; run < 30; run++) {
 
         BinGA *gen;
@@ -89,11 +90,13 @@ int main(int argc, char *argv[]){
             gen->crossover();
             gen->createNew();
             gen->mutate();
+            gen->calcVars(chrom_length, max);
             gen->returnInput(x);
             cec17_test_func(x, f,nvars,nchroms,func_num);
             gen->calcfitness(f);
     //        gen->dummyFitness();
             gen->sort(0, nchroms);
+//            printf("%d, %f\n", epoch, gen->pop[popNum][0].getFitness());
         }
 
         printf("%d, %f\n", run, gen->pop[popNum][0].getFitness());

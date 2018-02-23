@@ -23,6 +23,7 @@ public:
 
     double getvar(int index);
     void setvar(int index, double rvar);
+    void calcVar(int& chrom_length, double& max);
 
     std::vector<double> const &getAllvar() const;
     void setAllvar(std::vector<double>& rvar);
