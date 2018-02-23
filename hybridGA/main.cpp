@@ -63,6 +63,12 @@ int main(int argc, char *argv[]){
         chrom_length = 16;
     }
 
+    std::vector<double> topFit;
+    for(int i = 0; i < nvars; i++){
+        topFit.push_back(0.0);
+    }
+    double topReal, topBin;
+
 
     int i,j,k,n,m,func_num;
     double *f,*x,*y;
@@ -81,6 +87,7 @@ int main(int argc, char *argv[]){
         BinGA *bingen;
         realgen = new RealGA(ncross, nmute, nchroms, nelites, nvars, min, max);
         bingen = new BinGA(ncross, nmute, chrom_length, nchroms, nelites, nvars, min, max);
+
         int popNum = 0;
 
         realgen->returnInput(x);
@@ -93,40 +100,82 @@ int main(int argc, char *argv[]){
 //    realgen->dummyFitness();
         realgen->sort(0, nchroms);
         bingen->sort(0, nchroms);
-        printf("%f\n", realgen->pop[popNum][0].getFitness());
-        printf("%f\n", bingen->pop[popNum][0].getFitness());
+//        printf("%f\n", realgen->pop[popNum][0].getFitness());
+//        printf("%f\n", bingen->pop[popNum][0].getFitness());
 
         for (int epoch = 0; epoch < nepochs; epoch++) {
             popNum = ((popNum + 1) % 2);
             realgen->setpopNum(popNum);
             bingen->setpopNum(popNum);
+
             realgen->preserveElites();
             bingen->preserveElites();
+
             realgen->crossover();
             bingen->crossover();
+
             realgen->createNew();
             bingen->createNew();
+
             realgen->mutate();
             bingen->mutate();
+            bingen->calcVars(chrom_length, max);
+
+
             realgen->returnInput(x);
+            bingen->calcVars(chrom_length, max);
             cec17_test_func(x, f, nvars, nchroms, func_num);
             bingen->returnInput(x);
             realgen->calcfitness(f);
             cec17_test_func(x, f, nvars, nchroms, func_num);
             bingen->calcfitness(f);
+
 //        realgen->dummyFitness();
+
             realgen->sort(0, nchroms);
             bingen->sort(0, nchroms);
-            printf("%d, real =  %f\n", epoch, realgen->pop[popNum][0].getFitness());
-            printf("%d, bin = %f\n", epoch, bingen->pop[popNum][0].getFitness());
+
+
             /*
-             * need to compare top vals
-             * replace
-             * 
+             * need to compare top vals & transfer top elite
+             *
              */
+            topFit = std::move(realgen->pop[popNum][0].getAllvar());
+            topReal = realgen->pop[popNum][0].getFitness();
+            topBin = bingen->pop[popNum][0].getFitness();
+            printf("%d, real = %f\n", epoch, realgen->pop[popNum][0].getFitness());
+            printf("%d, bin  = %f\n", epoch, bingen->pop[popNum][0].getFitness());
+
+            if((abs(topReal) - abs(topBin)) < 0){
+//                printf("%d, real = %f\n", epoch, realgen->pop[popNum][0].getFitness());
+                bingen->pop[popNum][0].setAllvar(topFit);
+                bingen->calcVars(chrom_length, max);
+//                bingen->returnInput(x);
+//                cec17_test_func(x, f, nvars, nchroms, func_num);
+//                bingen->sort(0, nchroms);
+            } else {
+//                printf("%d, bin  = %f\n", epoch, bingen->pop[popNum][0].getFitness());
+                topFit = std::move(bingen->pop[popNum][0].getAllvar());
+                realgen->pop[popNum][0].setAllvar(topFit);
+//                realgen->returnInput(x);
+//                cec17_test_func(x, f, nvars, nchroms, func_num);
+//                realgen->calcfitness(f);
+                realgen->sort(0, nchroms);
+            }
+
+
+
         }
 
-        printf("%d, %f\n", run, realgen->pop[popNum][0].getFitness());
+        topReal = realgen->pop[popNum][0].getFitness();
+        topBin = bingen->pop[popNum][0].getFitness();
+
+        if((abs(topReal) - abs(topBin)) < 0){
+            printf("%d, %f\n", run, realgen->pop[popNum][0].getFitness());
+        } else {
+            printf("%d, bin  = %f\n", run, bingen->pop[popNum][0].getFitness());
+        }
+
 
         delete realgen;
         delete bingen;

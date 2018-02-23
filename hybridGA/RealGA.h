@@ -30,7 +30,7 @@ public:
     void createNew();
     void iteration();
 
-    double gettopFit();
+    std::vector<double> gettopFit();
     void settopFit(double rtopFit);
     int getpopNum();
     void setpopNum(int rpopNum);

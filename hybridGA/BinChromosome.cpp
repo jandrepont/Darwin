@@ -38,7 +38,7 @@ BinChromosome::BinChromosome(int r_nvars, float min, float max, int chrom_length
     rng.seed(std::random_device{}());
 //    std::vector<int> unbounded_val;
     double temp_val;
-    int constraint;
+    double constraint;
     int length;
     length = nvars * chrom_length;
     temp_val = 0;
@@ -65,9 +65,55 @@ BinChromosome::~BinChromosome()
 //    delete [] var;
 }
 
+void BinChromosome::calcVars(int chrom_length, double max)
+{
+    double temp_val;
+    int constraint;
+    int length, index;
+    length = nvars * chrom_length;
+    temp_val = 0;
+    constraint = chrom_length;
+    constraint = pow(2,constraint-1);
+    constraint -= 1;
+    index = 0;
+    for(int i = 0; i < length; i++){
+        if(gene[i] == 1){
+            temp_val += pow(2, (i%chrom_length));
+        }
+        if(((i % chrom_length) == 0 && i != 0) || i == length-1){
+            temp_val = temp_val-constraint;
+            temp_val = temp_val/constraint;
+            temp_val = temp_val*max;
+            var[index] = temp_val;
+            temp_val = 0;
+            ++index;
+        }
+    }
+}
+/*
+ * Transfer these real numbers into gene/binary representation
+ */
 void BinChromosome::setAllvar(std::vector<double>& rvar)
 {
-    var = std::move(rvar);
+//    var.swap(rvar);
+    int temp;
+    double conv;
+    int index;
+    index = 0;
+    for(int i = 0; i < nvars; i++){
+        conv = rvar[i];
+        conv = conv / 100;
+        conv = conv*(pow(2,15)-1);
+        temp = (int)(conv+(pow(2,15)-1));
+        for(int j = 0; j < 16; j++){
+            gene[index] = temp % 2;
+            temp = temp / 2;
+            ++index;
+        }
+    }
+
+    calcVars(16,100.0);
+
 }
 
 BinChromosome BinChromosome::operator=(const BinChromosome& r)

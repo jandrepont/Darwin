@@ -234,6 +234,11 @@ void BinGA::returnInput(double *x)
     }
 }
 
+void BinGA::calcVars(int chrom_length, double max){
+    for(int i = 0; i < nchroms; i++){
+        pop[popNum][0].calcVars(chrom_length, max);
+    }
+}
 
 
 void BinGA::iteration()

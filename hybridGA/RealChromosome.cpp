@@ -42,7 +42,8 @@ RealChromosome::~RealChromosome()
 
 void RealChromosome::setAllvar(std::vector<double> rvar)
 {
-    var = std::move(rvar);
+//    var = std::move(rvar);
+    var.swap(rvar);
 }
 
 RealChromosome RealChromosome::operator=(const RealChromosome& r)

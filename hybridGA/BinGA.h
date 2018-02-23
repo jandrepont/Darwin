@@ -21,6 +21,8 @@ public:
 //    ~BinGA();
     int rouletteWheel();
     void calcfitness();
+    void calcVars(int chrom_length, double max);
+
 
     void preserveElites();
     void crossover();

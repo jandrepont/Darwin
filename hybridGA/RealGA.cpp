@@ -3,6 +3,7 @@
 #include <algorithm>
 #include "RealGA.h"
 #include "RealChromosome.h"
+#include "BinChromosome.h"
 #include <sstream>
 #include <malloc.h>
 //#include "../cec14-c-code/cec14_test_func.cpp"
@@ -248,6 +249,10 @@ void RealGA::createNew()
     }
 
 }
+
+//std::vector<double> RealGA::gettopFit() {
+//    return pop[popNum][0].getAllvar();
+//}
 
 
 

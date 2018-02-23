@@ -24,7 +24,7 @@ public:
     double getvar(int index);
     void setvar(int index, double rvar);
 
-    std::vector<double> const &getAllvar() const;
+    std::vector<double> getAllvar();
     void setAllvar(std::vector<double>);
 
     double getFitness();
@@ -83,7 +83,7 @@ inline void RealChromosome::setvar(int index, double rvar)
     var[index] = rvar;
 }
 
-inline std::vector<double> const &RealChromosome::getAllvar() const
+inline std::vector<double> RealChromosome::getAllvar()
 {
     return var;
 }
