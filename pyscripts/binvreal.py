@@ -11,7 +11,7 @@ files=[]
 
 for index in range(x):
     if(index != 1):
-        files.append(('../realGA/results/realf%d.csv' % (index+1)))
+        files.append(('/home/joela/workspace/uno/mllab/Darwin/realGA/results/realf%d.csv' % (index+1)))
 # print(files)
 # files = islice(glob.iglob('../realGA/results/*.csv'),x)
 filecount = 0
@@ -30,7 +30,7 @@ for filename in files:
 files[:] = []
 for index in range(x):
     if(index != 1):
-        files.append(('../binGA/results/gmem16/binf%d.csv' % (index+1)))
+        files.append(('/home/joela/workspace/uno/mllab/Darwin/binGA/results/gmem16/binf%d.csv' % (index+1)))
 # print(files)
 print("\n")
 # files = islice(glob.iglob('../realGA/results/*.csv'),x)
@@ -53,7 +53,7 @@ for filename in files:
 files[:] = []
 for index in range(x):
     if(index != 1):
-        files.append(('../hybridGA/results/lbin16greal1/hybf%d.csv' % (index+1)))
+        files.append(('/home/joela/workspace/data/final/hybf%d.csv' % (index+1)))
 filecount = 0
 for filename in files:
     with open(filename) as fin:
@@ -67,7 +67,7 @@ for filename in files:
                 # print float(row[2])
                 total += Decimal(row[2])
         hyb_mean.append(total / n);
-        print(filename),; print("mean = "),; print(hyb_mean[filecount])
+        print("%f," %(hyb_mean[filecount]))
     filecount = filecount+1
 result = 0
 
@@ -77,14 +77,16 @@ for index in range(len(real_mean)):
         index = index + 1
     result = max(real_mean[index],bin_mean[index]) / min(real_mean[index], bin_mean[index])
     result = abs((1-result))*100
-    if bin_mean[index] == max(real_mean[index],bin_mean[index]):
-        print("R %f," % (result))
-    else:
-        print("B %f," % (result))
-    # print("including the hybrid GA: ")
-    # result = min(real_mean[index],bin_mean[index]) / min(real_mean[index], bin_mean[index],hyb_mean[index])
-    # result = abs((1-result))*100
-    # if hyb_mean[index] == min(real_mean[index], bin_mean[index],hyb_mean[index]):
-    #     print("Hybrid is new lowest, at %f" % (result)),; print("%\smaller than previous optimum")
+    # if bin_mean[index] == max(real_mean[index],bin_mean[index]):
+        # print("R %f," % (result))
     # else:
-    #     print("no improvement")
+        # print("B %f," % (result))
+    # print("including the hybrid GA: ")
+    result = min(real_mean[index],bin_mean[index]) / min(real_mean[index], bin_mean[index],hyb_mean[index])
+    result = abs((1-result))*100
+    if hyb_mean[index] == min(real_mean[index], bin_mean[index],hyb_mean[index]):
+        print("H %f," % (result)),;
+    if real_mean[index] == min(real_mean[index], bin_mean[index],hyb_mean[index]):
+        print("R %f," % (result)),;
+    if bin_mean[index] == min(real_mean[index], bin_mean[index],hyb_mean[index]):
+        print("B %f," % (result)),;

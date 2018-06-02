@@ -3,7 +3,7 @@
 
 b=2
 
-j="./dist/hybridGA >> results/lbin16greal1/hybf"
+j="./dist/hybridGA >> results/final/hybf"
 #j="foo"; k='$j\>'
 for i in {1..30}
 do
